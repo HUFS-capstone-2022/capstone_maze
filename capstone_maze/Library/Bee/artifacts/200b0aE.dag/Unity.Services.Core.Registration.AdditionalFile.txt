@@ -1,1 +1,1 @@
-/Users/leejj/Desktop/workspace/unity_workspace/capstone_maze/capstone_maze/capstone_maze
+/Users/leejj/Desktop/capstone_maze/capstone_maze

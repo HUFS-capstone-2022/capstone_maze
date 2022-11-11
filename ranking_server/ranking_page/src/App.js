@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import { 
   BrowserRouter as Router,
   Routes,
@@ -7,7 +8,16 @@ import Main from './pages/Main';
 import Result from './pages/Result';
 import NotFound from './pages/NotFound';
 
+import axios from 'axios';
+
 function App() {
+
+  useEffect(() => {
+    axios.get('/api/test')
+      .then(res => console.log(res))
+      .catch()
+  })
+
   return (
     <div className='App'>
       <Router>

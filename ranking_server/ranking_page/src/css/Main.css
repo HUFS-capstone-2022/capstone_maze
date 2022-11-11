@@ -5,4 +5,17 @@
 .rank_text {
     text-align: center;
     color: black;
+    margin: 3% 0;
+}
+
+.rank_table {
+    margin-left: 9.5%;
+    width: 80%;
+    text-align: center;
+    text-decoration-line: none;
+}
+
+.end_type {
+    color: black;
+    cursor: pointer;
 }

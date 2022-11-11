@@ -6,3 +6,7 @@ h1 {
 .link {
     text-decoration-line: none;
 }
+
+.header {
+    margin-bottom: 3%;
+}

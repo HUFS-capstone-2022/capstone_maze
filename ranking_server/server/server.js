@@ -2,9 +2,7 @@ const express = require('express');
 const app = express();
 const port = 4000;
 const cors = require('cors');
-const mysql = require('mysql');
-const path = require('path');
-
+const mysql = require('mysql2/promise');
 const db = mysql.createPool({
     host : "localhost",
     user : "leejj",
@@ -17,12 +15,22 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    const sqlQuery = "select * from maze_ranking.True_ending;"
-    db.query(sqlQuery, (err, result) => {
-        res.send('success')
-        res.send(result)
-        console.log(err)
-    })
+    res.send('success')
+});
+
+
+app.get("/ranking", async(req, res) => {
+    const { rankType, PlayerId } = req.query;
+    // const rankType = "True";
+    // const PlayerId = 5;
+    // console.log(`select * from maze_ranking.${rankType}_ending where id=${PlayerId}`)
+    try {
+        const infoRankData = await db.query(`select * from ${rankType}_ending where id=${PlayerId};`);
+        console.log(infoRankData[0]);
+        res.send(infoRankData[0])
+    } catch (err) {
+        console.log(err);
+    }
 })
 
 app.listen(port, () => {

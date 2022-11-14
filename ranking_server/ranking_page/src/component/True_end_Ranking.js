@@ -1,24 +1,26 @@
-import { React, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+/* eslint-disable */
+import { React, useEffect, useState } from "react";
 import '../css/Ranking.css';
 import axios from 'axios';
 
 function True_end_Ranking() {
-    const params = useParams();
+    const [completed, setCompleted] = useState(false);
+    const [data, setData] = useState({ row : [] });
 
     useEffect(() => {
 
         const rankingData = async () => {
             try {
-                const infoRankData = await axios.get("/ranking", { params : "true" });
+                const infoRankData = await axios.get("http://localhost:4000/ranking", { params : { rankType : "True", PlayerId : 5 } });
                 const infoRank = infoRankData.data;
-                console.log(infoRank);
+                // console.log(infoRank);
+                setData(infoRank)
+                // console.log(data);
                 if (infoRank.success === false) {
                     alert("존재하지 않는 유저입니다.");
                     return;
                 }
-
-
+                return infoRank;
             } catch (err) {
                 console.log(err);
                 alert("서버 접속 오류");
@@ -26,7 +28,19 @@ function True_end_Ranking() {
             }
         }
         rankingData();
-    })
+        setCompleted(true);
+        console.log(completed);
+
+    }, [])
+
+    if (data[0] === undefined){
+        console.log("wait");
+    }
+    else {
+        console.log("continue");
+        console.log(completed);
+        console.log(data);
+    }
 
     return(
         <div>
@@ -36,12 +50,16 @@ function True_end_Ranking() {
                     <tr>
                         <td>Rank</td><td>Name</td><td>Clear Time</td>
                     </tr>
-                </thead>
+                </thead>        
+                {data[0] === undefined ? (
+                <div>waiting</div>
+                ) : (
                 <tbody className="tbody">
                     <tr>
-                        <td>1</td><td>hello</td><td>1:22:4</td>
+                        <td>{data[0].id}</td><td>{data[0].name}</td><td>{data[0].clear_time}</td>
                     </tr>
                 </tbody>
+                )}
             </table>
         </div>
     )

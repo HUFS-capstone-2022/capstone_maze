@@ -341,14 +341,14 @@
 -r:"/Users/leejj/Desktop/capstone_maze/capstone_maze/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_AmbisonicSource.cs"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_API.cs"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_AudioListener.cs"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_AudioSource.cs"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_Context.cs"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_SceneGeometry.cs"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_SceneMaterial.cs"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_Types.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_AmbisonicSource.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_API.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_AudioListener.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_AudioSource.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_Context.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_SceneGeometry.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_SceneMaterial.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Runtime/PXR_Audio_Spatializer_Types.cs"
 -langversion:9.0
 
 /deterministic

@@ -341,7 +341,7 @@
 -r:"/Users/leejj/Desktop/capstone_maze/capstone_maze/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Samples/scripts/plastic_fps_controller.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Samples/scripts/plastic_fps_controller.cs"
 -langversion:9.0
 
 /deterministic

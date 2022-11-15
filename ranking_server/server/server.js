@@ -20,14 +20,17 @@ app.get('/', (req, res) => {
 
 
 app.get("/ranking", async(req, res) => {
-    const { rankType, PlayerId } = req.query;
-    // const rankType = "True";
-    // const PlayerId = 5;
+    // const { rankType, PlayerId } = req.query;
+    const rankType = "True";
+    const PlayerId = 5;
     // console.log(`select * from maze_ranking.${rankType}_ending where id=${PlayerId}`)
     try {
         const infoRankData = await db.query(`select * from ${rankType}_ending where id=${PlayerId};`);
-        console.log(infoRankData[0]);
+        // console.log(infoRankData[0]);
+        // console.log(typeof(infoRankData[0]))
+        // console.log(JSON.stringify(infoRankData[0]))
         res.send(infoRankData[0])
+        // res.send(JSON.stringify(infoRankData[0]))
     } catch (err) {
         console.log(err);
     }

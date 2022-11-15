@@ -349,8 +349,8 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Editor/PXR_Audio_Spatializer_ContextEditor.cs"
-"/Users/leejj/Desktop/PICO Unity Integration SDK v212/SpatialAuido/Editor/PXR_Audio_Spatializer_SceneGeometryEditor.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Editor/PXR_Audio_Spatializer_ContextEditor.cs"
+"/Users/leejj/Desktop/capstone_workspace/PICO Unity Integration SDK v212/SpatialAuido/Editor/PXR_Audio_Spatializer_SceneGeometryEditor.cs"
 -langversion:9.0
 
 /deterministic

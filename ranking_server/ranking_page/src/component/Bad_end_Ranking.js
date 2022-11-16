@@ -12,15 +12,14 @@ function Bad_end_Ranking() {
         const rankingData = async () => {
             try {
                 const infoRankData = await axios.get("http://localhost:4000/ranking", { params : { rankType : "Bad", PlayerId : 5 } });
-                const infoRank = infoRankData.data;
-                // console.log(infoRank);
-                setData(infoRank)
-                // console.log(data);
-                if (infoRank.success === false) {
+                const testdata = JSON.parse(infoRankData.data)
+                console.log(testdata[0])
+                setData(testdata)
+                if (testdata.success === false) {
                     alert("존재하지 않는 유저입니다.");
                     return;
                 }
-                return infoRank;
+                return testdata;
             } catch (err) {
                 console.log(err);
                 alert("서버 접속 오류");
@@ -33,18 +32,9 @@ function Bad_end_Ranking() {
 
     }, [])
 
-    if (data[0] === undefined){
-        console.log("wait");
-    }
-    else {
-        console.log("continue");
-        console.log(completed);
-        console.log(data);
-    }
-
     return(
         <div>
-            <div className="ending_title">True Ending Rank</div>
+            <div className="ending_title">Bad Ending Rank</div>
             <table className="table">
                 <thead className="thead">
                     <tr>

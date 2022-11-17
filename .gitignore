@@ -82,3 +82,4 @@ sketch
 # gitignore
 /node_modules
 .DS_Store
+.Ds_Store

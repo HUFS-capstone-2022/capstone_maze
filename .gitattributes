@@ -1,0 +1,2 @@
+*.psd filter=lfs diff=lfs merge=lfs -text
+capstone_ending/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text

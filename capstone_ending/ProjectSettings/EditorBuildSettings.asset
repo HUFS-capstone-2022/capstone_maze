@@ -4,7 +4,22 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/1. Scenes/Main.unity
+    guid: d0c995fdafe854ef3b03486e02f17ee6
+  - enabled: 1
+    path: Assets/1. Scenes/Bad_End_Scene.unity
+    guid: 3a5e99c0b8a175e4b80676ec9b6d1da3
+  - enabled: 1
+    path: Assets/1. Scenes/Normal_End_Scene.unity
+    guid: ccca8badc85d4b6479d15b17967f6e93
+  - enabled: 1
+    path: Assets/1. Scenes/True_End_Scene.unity
+    guid: cbcee31bfe401b94da74682e2a103981
+  - enabled: 1
+    path: Assets/1. Scenes/Boat_moving.unity
+    guid: 0557cc83ee889964e9746ceca640a11a
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 50195e831cc688e4aa3aaf75bb37d2c1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e5ef895c000422f48950bc45a44ee54d, type: 2}

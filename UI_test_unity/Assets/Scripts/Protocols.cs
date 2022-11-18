@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Newtonsoft.Json;
 
 namespace Protocols
 {
@@ -9,10 +10,12 @@ namespace Protocols
     {
         public class find_req
         {
-            public string userName;
-            public find_req(string userName)
+            public int userId;
+            public string clearType;
+            public find_req(int userId, string clearType)
             {
-                this.userName = userName;
+                this.userId = userId;
+                this.clearType = clearType;
             }
         }
 
@@ -26,10 +29,10 @@ namespace Protocols
         // : 역직렬화 대상
         public class info_userData
         {
-            public string userID;
-            public string userName;
-            public string userClearType;
-            public string userClearTime;
+            public int id;
+            public string name;
+            public DateTime clear_time;
+            public int clear_type;
         }
     }
 }

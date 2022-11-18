@@ -10,7 +10,7 @@ const db = mysql.createPool({
     user : "leejj",
     password : "dydy8325",
     database : "maze_ranking",
-    connectionLimit : 5,
+    connectionLimit : 10,
     multipleStatements: true
 })
 

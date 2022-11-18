@@ -28,9 +28,10 @@ public class BadManager : MonoBehaviour
 // 0. Must need values
     // Value for caching player's transform component
     private Transform playerTr;
+    public bool playerMove = false;
 
 // 1. Values for Making Units Move Functions
-    // Make Class List for ccontrol every units in "Bad_End_Scene"
+// Make Class List for ccontrol every units in "Bad_End_Scene"
     public List<BadUnit> Units = new List<BadUnit>();
     // Bool for make units move.
     public bool makeUnitMove = false;

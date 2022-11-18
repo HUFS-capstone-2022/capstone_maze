@@ -11,13 +11,16 @@ public class NormalCar1 : MonoBehaviour
     void Start()
     {
         navAgent = GetComponent<NavMeshAgent>();
-
-        navAgent.SetDestination(destination);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (NormalManager.Instance.carMoves)
+        {
+            navAgent.SetDestination(destination);
 
+            NormalManager.Instance.carMoves = false;
+        }
     }
 }

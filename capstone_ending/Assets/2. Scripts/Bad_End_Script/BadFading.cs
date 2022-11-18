@@ -53,8 +53,8 @@ public class BadFading : MonoBehaviour
     {
         while (fadeLerpVal < 1.0f)
         {
-            fadeLerpVal = Mathf.Round((fadeLerpVal + 0.025f) * 1000) * 0.001f;
-            yield return new WaitForSeconds(0.1f);
+            fadeLerpVal = Mathf.Round((fadeLerpVal + 0.02f) * 100) * 0.01f;
+            yield return new WaitForSeconds(0.02f);
         }
         Debug.Log("FadeIn Coroutine End!");
     }
@@ -64,9 +64,10 @@ public class BadFading : MonoBehaviour
     {
         while (fadeLerpVal > 0.0f)
         {
-            fadeLerpVal = Mathf.Round((fadeLerpVal - 0.05f) * 100) * 0.01f;
-            yield return new WaitForSeconds(0.1f);
+            fadeLerpVal = Mathf.Round((fadeLerpVal - 0.02f) * 100) * 0.01f;
+            yield return new WaitForSeconds(0.02f);
         }
         Debug.Log("FadeOut Coroutine End!");
+        BadManager.Instance.playerMove = true;
     }
 }

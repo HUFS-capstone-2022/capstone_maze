@@ -53,7 +53,7 @@ public class BoatFading : MonoBehaviour
     {
         while (fadeLerpVal < 1.0f)
         {
-            fadeLerpVal = Mathf.Round((fadeLerpVal + 0.05f) * 100) * 0.01f;
+            fadeLerpVal = Mathf.Round((fadeLerpVal + 0.02f) * 100) * 0.01f;
             yield return new WaitForSeconds(0.1f);
         }
         Debug.Log("FadeIn Coroutine End!");
@@ -64,8 +64,8 @@ public class BoatFading : MonoBehaviour
     {
         while (fadeLerpVal > 0.0f)
         {
-            yield return new WaitForSeconds(0.1f);
-            fadeLerpVal = Mathf.Round((fadeLerpVal - 0.1f) * 10) * 0.1f;
+            yield return new WaitForSeconds(0.02f);
+            fadeLerpVal = Mathf.Round((fadeLerpVal - 0.02f) * 100) * 0.01f;
         }
     }
 }

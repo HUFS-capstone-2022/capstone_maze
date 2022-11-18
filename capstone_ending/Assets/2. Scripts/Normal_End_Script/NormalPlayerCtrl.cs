@@ -11,7 +11,6 @@ public class NormalPlayerCtrl : MonoBehaviour
     private Vector3 destination = new Vector3(0.0f, 0.0f, 43.32f);
     private Vector3 velocity = Vector3.zero;
     public float smoothTime = 2.0f;
-    private bool moving = true;
     float distance = 0.0f;
 
     // Start is called before the first frame update
@@ -24,7 +23,7 @@ public class NormalPlayerCtrl : MonoBehaviour
     void Update()
     {
         // Make player gameObject move.
-        if (moving)
+        if (NormalManager.Instance.makeStart)
         {
             playerTr.position = Vector3.SmoothDamp(playerTr.position, destination, ref velocity, smoothTime);
             distance = Vector3.Distance(playerTr.position, destination);
@@ -32,7 +31,7 @@ public class NormalPlayerCtrl : MonoBehaviour
             // If Player is about arrived
             if (distance < 0.15f)
             {
-                moving = false;
+                NormalManager.Instance.makeStart = false;
                 Debug.Log("Player is arrived!");
             }
         }

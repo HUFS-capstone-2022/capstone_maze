@@ -10,8 +10,7 @@ public class BadPlayerCtrl : MonoBehaviour
     // 1. Values for Smooth Damp
     private Vector3 velocity = Vector3.zero;
     public float smoothTime = 2.0f;
-    private Vector3 destination = new Vector3(0.0f, 0.0f, 0.0f);
-    private bool moving = true;
+    private Vector3 destination = new Vector3(0.0f, 0.0f, 1.0f);
     float distance = 0.0f;
 
     // Start is called before the first frame update
@@ -24,7 +23,7 @@ public class BadPlayerCtrl : MonoBehaviour
     void Update()
     {
         // Make player gameObject move.
-        if (moving)
+        if (BadManager.Instance.playerMove)
         {
             playerTr.position = Vector3.SmoothDamp(playerTr.position, destination, ref velocity, smoothTime);
             distance = Vector3.Distance(playerTr.position, destination);
@@ -32,7 +31,7 @@ public class BadPlayerCtrl : MonoBehaviour
             // If Player is about arrived
             if (distance < 0.15f)
             {
-                moving = false;
+                BadManager.Instance.playerMove = false;
                 Debug.Log("Player is arrived!");
                 BadManager.Instance.makeUnitMove = true;
             }

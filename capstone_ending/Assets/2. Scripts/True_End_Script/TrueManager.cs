@@ -46,17 +46,4 @@ public class TrueManager : MonoBehaviour
         // If have Instance, Instance have to be only one. So, destroy this game object.
         Destroy(gameObject);
     }
-
-
-    // Start
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

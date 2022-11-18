@@ -3,15 +3,15 @@ using UnityEngine.AI;
 
 public class TruePlayerCtrl : MonoBehaviour
 {
+// Must have values
     private Transform playerTr;
     private NavMeshAgent navAgent;
-    public float smoothTime = 1.0f;
+    
+// Values for set destination or check player is arrived
     float distance = 0.0f;
+    private Vector3 destination = new Vector3(97.0f, 13.45f, -74.0f);
 
-
-    private Vector3 destination0 = new Vector3(97.0f, 13.45f, -74.0f);
-
-    public bool order = true;
+    public bool setAgentDest = true;
     public bool arrived = false;
 
     // Start is called before the first frame update
@@ -26,12 +26,13 @@ public class TruePlayerCtrl : MonoBehaviour
     {
         if (TrueManager.Instance.makePlayerMoving)
         {
-            navAgent.SetDestination(destination0);
-            distance = Vector3.Distance(playerTr.position, destination0);
-            if (order)
+            if (setAgentDest)
             {
-                order = false;
+                navAgent.SetDestination(destination);
+                setAgentDest = false;
             }
+
+            distance = Vector3.Distance(playerTr.position, destination);
 
             if (distance < 0.1f)
             {

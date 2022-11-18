@@ -5,30 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class TrueFading : MonoBehaviour
 {
-    // Value for Material
+// Value for Material
     private Material _material;
 
-    // Lerp Value to make fading
+// Lerp Value to make fading
     [Range(0.0f, 1.0f)]
     public float fadeLerpVal = 1.000f;
 
-    // Awake()
+// Value for make FadeOut start
+    public bool start = true;
+
+// Awake()
     private void Awake()
     {
         // Add Shader in [Edit] - [Project Setting] - [Graphics] - [Always included shaders] for use this
         _material = new Material(Shader.Find("Hidden/Fade"));
     }
 
-    // Start()
-    void Start()
-    {
-        StartCoroutine(FadeOut());
-        Debug.Log("FadeOut Coroutine called!!");
-    }
-
-    // Update()
+// Update()
     void Update()
     {
+        if (start)
+        {
+            StartCoroutine(FadeOut());
+            Debug.Log("FadeOut Coroutine called!!");
+            start = false;
+        }
+
         if (TrueManager.Instance.makeFadeIn)
         {
             StartCoroutine(FadeIn());
@@ -49,25 +52,25 @@ public class TrueFading : MonoBehaviour
         Graphics.Blit(source, destination, _material);
     }
 
-    // Fade In Coroutine
+// Fade In Coroutine
     IEnumerator FadeIn()
     {
         while (fadeLerpVal < 1.0f)
         {
-            fadeLerpVal = Mathf.Round((fadeLerpVal + 0.1f) * 10) * 0.1f;
-            yield return new WaitForSeconds(0.1f);
+            fadeLerpVal = Mathf.Round((fadeLerpVal + 0.02f) * 100) * 0.01f;
+            yield return new WaitForSeconds(0.02f);
         }
         SceneManager.LoadScene("Boat_moving");
     }
 
-    // Fade Out Coroutine
+// Fade Out Coroutine
     IEnumerator FadeOut()
     {
         while (fadeLerpVal > 0.0f)
         {
-            yield return new WaitForSeconds(0.1f);
-            fadeLerpVal = Mathf.Round((fadeLerpVal - 0.05f) * 100) * 0.01f;
+            yield return new WaitForSeconds(0.02f);
+            fadeLerpVal = Mathf.Round((fadeLerpVal - 0.02f) * 100) * 0.01f;
         }
-        TrueManager.Instance.FadeOut = true;
+        TrueManager.Instance.makePlayerMoving = true;
     }
 }

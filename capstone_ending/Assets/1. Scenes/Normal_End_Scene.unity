@@ -1978,6 +1978,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811ad9b3f2f805248992503f10c5750c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  makeStart: 0
+  carMoves: 0
+  carMoves2: 0
   makeUnitMove: 0
   arrivedUnitNum: 0
   makeGrayScale: 0
@@ -2995,6 +2998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeLerpVal: 1
+  start: 1
 --- !u!1001 &767779043
 PrefabInstance:
   m_ObjectHideFlags: 0

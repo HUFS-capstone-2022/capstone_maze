@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/1. Scenes/True_End_Scene.unity
+- path: Assets/1. Scenes/Bad_End_Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

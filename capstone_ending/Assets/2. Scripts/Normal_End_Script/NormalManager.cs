@@ -28,7 +28,12 @@ public class NormalManager : MonoBehaviour
     private Transform playerTr;
 
 // 1. Values for Making Units Move Functions
-    // Bool for make units move.
+    // make player and police car move
+    public bool makeStart = false;
+    public bool carMoves = false;
+    public bool carMoves2 = false;
+
+    // to make units move
     public bool makeUnitMove = false;
     // Arrived unit number
     public int arrivedUnitNum = 0;

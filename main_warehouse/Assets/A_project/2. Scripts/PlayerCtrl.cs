@@ -65,7 +65,7 @@ namespace Unity.XR.PXR
             {
                 if (!(axis2D.y <= 0)||axis2D.x!=0)
                 {
-                    Debug.Log("걸어!!");
+                    Debug.Log("걸어 좀!!");
                     var shakea = new Vector3(0, camtr.eulerAngles.y + shakeY, 0);
                     var shakeb = new Vector3(0, shakeY, 0);
                     var shakeDir = shakea + shakeb;

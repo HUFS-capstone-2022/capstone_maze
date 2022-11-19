@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: 8bde41a4a2c0a0741898e8869ca7db86
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Door01A
+    100004: Door01B
+    100006: RollupDoor
+    100008: WareHouse01Extended
+    100010: WareHouse01Extended_LOD0
+    100012: WareHouse01Extended_LOD1
+    100014: WareHouse01Extended_LOD2
+    400000: //RootNode
+    400002: Door01A
+    400004: Door01B
+    400006: RollupDoor
+    400008: WareHouse01Extended
+    400010: WareHouse01Extended_LOD0
+    400012: WareHouse01Extended_LOD1
+    400014: WareHouse01Extended_LOD2
+    2300000: //RootNode
+    2300002: Door01A
+    2300004: Door01B
+    2300006: RollupDoor
+    2300008: WareHouse01Extended
+    2300010: WareHouse01Extended_LOD0
+    2300012: WareHouse01Extended_LOD1
+    2300014: WareHouse01Extended_LOD2
+    3300000: //RootNode
+    3300002: Door01A
+    3300004: Door01B
+    3300006: RollupDoor
+    3300008: WareHouse01Extended
+    3300010: WareHouse01Extended_LOD0
+    3300012: WareHouse01Extended_LOD1
+    3300014: WareHouse01Extended_LOD2
+    4300000: polySurface1054
+    4300002: polySurface1056
+    4300004: pCube67
+    4300006: polySurface1055
+    4300008: polySurface1063
+    4300010: WareHouse01Extended
+    4300012: RollupDoor
+    4300014: Door01A
+    4300016: Door01B
+    4300018: WareHouse01Extended_LOD2
+    4300020: WareHouse01Extended_LOD0
+    4300022: WareHouse01Extended_LOD1
+    9500000: //RootNode
+    20500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
+    globalScale: 75
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

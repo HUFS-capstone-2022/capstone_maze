@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-namespace Unity.XR.PXR
-{
+using Unity.XR.PXR;
+
     public class PlayerCtrl : MonoBehaviour
     {
         public float speed = 12.0f;
@@ -23,7 +23,7 @@ namespace Unity.XR.PXR
         private void Start()
         {
             currentController = InputDevices.GetDeviceAtXRNode(controller == PXR_Input.Controller.LeftController ? XRNode.LeftHand : XRNode.RightHand);
-            // 음 오른손은 안들어오고있는거같은데..
+            // 음..
             tr = GetComponent<Transform>();
             camtr = Camera.main.GetComponent<Transform>();
             StartCoroutine("walkShake");
@@ -65,7 +65,6 @@ namespace Unity.XR.PXR
             {
                 if (!(axis2D.y <= 0)||axis2D.x!=0)
                 {
-                    Debug.Log("걸어 좀!!");
                     var shakea = new Vector3(0, camtr.eulerAngles.y + shakeY, 0);
                     var shakeb = new Vector3(0, shakeY, 0);
                     var shakeDir = shakea + shakeb;
@@ -77,5 +76,4 @@ namespace Unity.XR.PXR
                 yield return null;
             }
         }
-    }
 }

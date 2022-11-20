@@ -29,7 +29,6 @@ public class HandGrabbing : MonoBehaviour
     {
         _lastFramePosition = transform.position;
 
-        XRDevice.SetTrackingSpaceType(TrackingSpaceType.RoomScale);
 
         _currentGrabObject = null;
 

@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 7753422292035526377}
   - component: {fileID: 7753422292036296393}
   - component: {fileID: 7753422292037295113}
-  - component: {fileID: 2624158616703832851}
   m_Layer: 0
   m_Name: Barrel_LOD2
   m_TagString: Untagged
@@ -146,19 +145,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2624158616703832851
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753422292035093193}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7341362, y: 1.1294489, z: 0.7225357}
-  m_Center: {x: 0.00024543703, y: 0.56403196, z: -0.005358562}
 --- !u!1 &7753422292035093195
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +156,6 @@ GameObject:
   - component: {fileID: 7753422292035526379}
   - component: {fileID: 7753422292036296395}
   - component: {fileID: 7753422292037295115}
-  - component: {fileID: 9029729090263975126}
   m_Layer: 0
   m_Name: Barrel_LOD1
   m_TagString: Untagged
@@ -243,19 +228,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9029729090263975126
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753422292035093195}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.74080676, y: 1.1349452, z: 0.72924787}
-  m_Center: {x: 0.00014191866, y: 0.5667801, z: -0.005138725}
 --- !u!1 &7753422292035093197
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +239,6 @@ GameObject:
   - component: {fileID: 7753422292035526381}
   - component: {fileID: 7753422292036296397}
   - component: {fileID: 7753422292037295117}
-  - component: {fileID: 4445135198925065281}
   m_Layer: 0
   m_Name: Barrel_LOD0
   m_TagString: Untagged
@@ -340,16 +311,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4445135198925065281
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7753422292035093197}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.74080676, y: 1.1366558, z: 0.72924787}
-  m_Center: {x: 0.00014191866, y: 0.5676354, z: -0.005138725}

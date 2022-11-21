@@ -45,7 +45,7 @@ public class TruePlayerCtrl : MonoBehaviour
         if (arrived)
         {
             // fade In
-            TrueManager.Instance.makeFadeIn = true;
+            TrueManager.Instance.makeFadeOut = true;
         }
 
     }

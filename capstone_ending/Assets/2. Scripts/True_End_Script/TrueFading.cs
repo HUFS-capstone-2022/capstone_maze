@@ -32,12 +32,12 @@ public class TrueFading : MonoBehaviour
             start = false;
         }
 
-        if (TrueManager.Instance.makeFadeIn)
-        {
-            StartCoroutine(FadeIn());
-            Debug.Log("Fade In Coroutine called!!");
-            TrueManager.Instance.makeFadeIn = false;
-        }
+        //if (TrueManager.Instance.makeFadeIn)
+        //{
+        //    StartCoroutine(FadeIn());
+        //    Debug.Log("Fade In Coroutine called!!");
+        //    TrueManager.Instance.makeFadeIn = false;
+        //}
     }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)

@@ -26,15 +26,15 @@ public class BadFading : MonoBehaviour
     }
 
     // Update()
-    void Update()
-    {
-        if (BadManager.Instance.makeFadeIn)
-        {
-            StartCoroutine(FadeIn());
-            Debug.Log("Fade In Coroutine called!!");
-            BadManager.Instance.makeFadeIn = false;
-        }
-    }
+    //void Update()
+    //{
+    //    if (BadManager.Instance.makeFadeIn)
+    //    {
+    //        StartCoroutine(FadeIn());
+    //        Debug.Log("Fade In Coroutine called!!");
+    //        BadManager.Instance.makeFadeIn = false;
+    //    }
+    //}
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {

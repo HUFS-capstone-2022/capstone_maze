@@ -14,6 +14,7 @@ public class HEADB : MonoBehaviour
     private Transform camtr;
     private Camera cam;
     public float radius = 0.3f;
+    private Vector3 ScreenCenter;
     LayerMask wallCol;
     // Start is called before the first frame update
     void Start()
@@ -23,18 +24,24 @@ public class HEADB : MonoBehaviour
                 : XRNode.RightHand);
         currentController.TryGetFeatureValue(CommonUsages.primary2DAxis, out axis2D);
         camtr = Camera.main.GetComponent<Transform>();
+        
         wallCol = LayerMask.NameToLayer("Block");
+        StartCoroutine("calculatecol");
     }
 
     // Update is called once per frame
-    void Update()
+    IEnumerator calculatecol()
     {
-        int layerMask = ~(1 << wallCol);
-        Collider[] colliders = Physics.OverlapSphere(camtr.transform.position, radius, layerMask);
-        foreach(Collider col in colliders)
+        while (true)
         {
-            if (col.name == "PlayerL") continue;
-            StartCoroutine("Blocking");
+            int layerMask = ~(1 << wallCol);
+            Collider[] colliders = Physics.OverlapSphere(camtr.transform.position, radius, layerMask);
+            foreach (Collider col in colliders)
+            {
+                if (col.name == "PlayerL") continue;
+                StartCoroutine("Blocking");
+            }
+            yield return null;
         }
     }
     IEnumerator Blocking()
@@ -45,14 +52,21 @@ public class HEADB : MonoBehaviour
             {
                 if (axis2D.y >= 0)
                 {
-                    while (!(axis2D.y > 0))
-                    {
-                        axis2D.x -= 1;
-                        axis2D.y -= 1;
-                    }
+                    Debug.Log("y: "+axis2D.y);
+                    var inputVector = new Vector3(0, 0, axis2D.y);
+                    //var inputDir = transform.TransformDirection(inputVector);
+                    var lookDir = new Vector3(0, camtr.eulerAngles.y, 0);
+                    var newDir = Quaternion.Euler(lookDir) * inputVector;
+                    //transform.Translate(moveDir * Time.deltaTime);
+                    transform.Translate(newDir * Time.deltaTime * 0);
                 }
-            } 
+                else
+                {
+                    yield return new WaitForSeconds(0.1f);
+                }
+            }
             yield return null;
         }
+
     }
 }

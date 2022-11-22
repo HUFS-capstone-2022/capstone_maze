@@ -30,7 +30,7 @@ public class TrueManager : MonoBehaviour
     public bool FadeOut = false;
 
     // 4. Make screen Fade In after get DB data
-    public bool makeFadeOut = false;
+    public bool makeFadeIn = false;
 
     public bool makePlayerMoving = false;
 

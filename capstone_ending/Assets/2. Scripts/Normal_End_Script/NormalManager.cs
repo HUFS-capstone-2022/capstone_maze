@@ -48,7 +48,7 @@ public class NormalManager : MonoBehaviour
     public bool getDB = false;
 
 // 4. Make screen Fade In after get DB data
-    public bool makeFadeOut = false;
+    public bool makeFadeIn = false;
 
 
 // Awake()

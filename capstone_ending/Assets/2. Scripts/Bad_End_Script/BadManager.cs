@@ -51,7 +51,7 @@ public class BadManager : MonoBehaviour
 
 
 // 4. Make screen Fade In after get DB data
-    public bool makeFadeOut = false;
+    public bool makeFadeIn = false;
 
 
 
@@ -99,7 +99,7 @@ public class BadManager : MonoBehaviour
         }
 
         // 2. Make screen grayScale
-        if (arrivedUnitNum == 6 && !calledGrayScale)
+        if (arrivedUnitNum == 10 && !calledGrayScale)
         {
             Debug.Log("Ordered to make screen GrayScale");
             makeGrayScale = true;

@@ -31,12 +31,12 @@ public class NormalFading : MonoBehaviour
             start = false;
         }
 
-        //if (NormalManager.Instance.makeFadeIn)
-        //{
-        //    StartCoroutine(FadeIn());
-        //    Debug.Log("Fade In Coroutine called!!");
-        //    NormalManager.Instance.makeFadeIn = false;
-        //}
+        if (NormalManager.Instance.makeFadeIn)
+        {
+            StartCoroutine(FadeIn());
+            Debug.Log("Fade In Coroutine called!!");
+            NormalManager.Instance.makeFadeIn = false;
+        }
     }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)

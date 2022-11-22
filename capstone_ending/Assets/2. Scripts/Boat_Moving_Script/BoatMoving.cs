@@ -10,7 +10,8 @@ public class BoatMoving : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     public float smoothTime = 2.0f;
     private Vector3 destination = new Vector3(500.0f, 0.43f, 0.61f);
-    
+    private bool moving = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +22,16 @@ public class BoatMoving : MonoBehaviour
     void Update()
     {
         // Make player gameObject move.
-        if (BoatManager.Instance.moving)
+        if (moving)
         {
             boatTr.position = Vector3.SmoothDamp(boatTr.position, destination, ref velocity, smoothTime);
 
             // If Player is about arrived
             if (boatTr.position.x > 300.0f)
             {
-                BoatManager.Instance.moving = false;
+                moving = false;
                 Debug.Log("Player is arrived!");
-                BoatManager.Instance.makeGrayScale = true;
+                BoatManager.Instance.getDB = true;
             }
         }
     }

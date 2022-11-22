@@ -50,8 +50,6 @@ public class NormalGrayScale : MonoBehaviour
             grayScaleLerpVal += 0.05f;
             yield return new WaitForSeconds(0.1f);
         }
-
-        NormalManager.Instance.getDB = true;
         Debug.Log("grayScale Coroutine End!");
     }
 }

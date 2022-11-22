@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
 
     void start()
     {
+        Debug.Log("here");
         left = () => OnButtonClick(LeftButton);
         LeftButton.onClick.AddListener(left);
         right = () => OnButtonClick(RightButton);

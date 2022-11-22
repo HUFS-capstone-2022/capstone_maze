@@ -51,5 +51,6 @@ public class BadGrayScale : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         Debug.Log("grayScale Coroutine End!");
+        BadManager.Instance.getDB = true;
     }
 }

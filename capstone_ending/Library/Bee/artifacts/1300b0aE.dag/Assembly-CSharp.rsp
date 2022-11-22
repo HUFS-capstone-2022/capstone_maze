@@ -375,6 +375,8 @@
 "Assets/2. Scripts/Boat_Moving_Script/BoatFading.cs"
 "Assets/2. Scripts/Boat_Moving_Script/BoatManager.cs"
 "Assets/2. Scripts/Boat_Moving_Script/BoatMoving.cs"
+"Assets/2. Scripts/CameraCtrl.cs"
+"Assets/2. Scripts/MainScript.cs"
 "Assets/2. Scripts/Normal_End_Script/ActivateNPC.cs"
 "Assets/2. Scripts/Normal_End_Script/NormalCar1.cs"
 "Assets/2. Scripts/Normal_End_Script/NormalCar2.cs"

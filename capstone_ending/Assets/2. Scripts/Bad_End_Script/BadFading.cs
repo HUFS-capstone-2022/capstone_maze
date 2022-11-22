@@ -4,70 +4,64 @@ using UnityEngine;
 
 public class BadFading : MonoBehaviour
 {
-// Value for Material
-    private Material _material;
+    public bool fadeOnStart = true;
+    public float fadeDuration = 2.0f;
+    public Color fadeColor;
+    private Renderer render;
 
-// Lerp Value to make fading
-    [Range(0.0f, 1.0f)]
-    public float fadeLerpVal = 1.000f;
-
-    // Awake()
-    private void Awake()
-    {
-        // Add Shader in [Edit] - [Project Setting] - [Graphics] - [Always included shaders] for use this
-        _material = new Material(Shader.Find("Hidden/Fade"));
-    }
-
-    // Start()
+    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FadeOut());
-        Debug.Log("FadeOut Coroutine called!!");
-    }
-
-    // Update()
-    void Update()
-    {
-        if (BadManager.Instance.makeFadeIn)
+        render = GetComponent<Renderer>();
+        if (fadeOnStart)
         {
             StartCoroutine(FadeIn());
+        }
+    }
+
+    void Update()
+    {
+        if (BadManager.Instance.makeFadeOut)
+        {
+            StartCoroutine(FadeOut());
             Debug.Log("Fade In Coroutine called!!");
-            BadManager.Instance.makeFadeIn = false;
+            BadManager.Instance.makeFadeOut = false;
         }
     }
 
-    private void OnRenderImage(RenderTexture source, RenderTexture destination)
+    public IEnumerator FadeIn()
     {
-        if (fadeLerpVal == 0)
+        float timer = 0.0f;
+        while (timer < fadeDuration)
         {
-            Graphics.Blit(source, destination);
-            return;
-        }
+            Color fiColor = fadeColor;
+            fiColor.a = Mathf.Lerp(1, 0, timer / fadeDuration);
+            render.material.SetColor("_Color", fiColor);
 
-        _material.SetFloat("_Fade", fadeLerpVal);
-        Graphics.Blit(source, destination, _material);
-    }
-
-    // Fade In Coroutine
-    IEnumerator FadeIn()
-    {
-        while (fadeLerpVal < 1.0f)
-        {
-            fadeLerpVal = Mathf.Round((fadeLerpVal + 0.02f) * 100) * 0.01f;
-            yield return new WaitForSeconds(0.02f);
+            timer += Time.deltaTime;
+            yield return null;
         }
-        Debug.Log("FadeIn Coroutine End!");
-    }
+        Color fiColor2 = fadeColor;
+        fiColor2.a = Mathf.Lerp(1, 0, timer / fadeDuration);
+        render.material.SetColor("_Color", fiColor2);
 
-    // Fade Out Coroutine
-    IEnumerator FadeOut()
-    {
-        while (fadeLerpVal > 0.0f)
-        {
-            fadeLerpVal = Mathf.Round((fadeLerpVal - 0.02f) * 100) * 0.01f;
-            yield return new WaitForSeconds(0.02f);
-        }
-        Debug.Log("FadeOut Coroutine End!");
         BadManager.Instance.playerMove = true;
+    }
+
+    public IEnumerator FadeOut()
+    {
+        float timer = 0.0f;
+        while (timer < fadeDuration)
+        {
+            Color foColor = fadeColor;
+            foColor.a = Mathf.Lerp(0, 1, timer / fadeDuration);
+            render.material.SetColor("_Color", foColor);
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        Color foColor2 = fadeColor;
+        foColor2.a = Mathf.Lerp(0, 1, timer / fadeDuration);
+        render.material.SetColor("_Color", foColor2);
     }
 }

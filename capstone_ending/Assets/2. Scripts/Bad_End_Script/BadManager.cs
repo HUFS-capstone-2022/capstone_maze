@@ -51,7 +51,7 @@ public class BadManager : MonoBehaviour
 
 
 // 4. Make screen Fade In after get DB data
-    public bool makeFadeIn = false;
+    public bool makeFadeOut = false;
 
 
 
@@ -74,6 +74,7 @@ public class BadManager : MonoBehaviour
     {
         // Assign Components of player
         playerTr = GameObject.FindWithTag("PLAYER").GetComponent<Transform>();
+        Debug.Log("start value of PlayerPrefs_ending = " + PlayerPrefs.GetInt("ending"));
     }
 
     // Update is called once per frame
@@ -99,7 +100,7 @@ public class BadManager : MonoBehaviour
         }
 
         // 2. Make screen grayScale
-        if (arrivedUnitNum == 10 && !calledGrayScale)
+        if (arrivedUnitNum == 6 && !calledGrayScale)
         {
             Debug.Log("Ordered to make screen GrayScale");
             makeGrayScale = true;
@@ -110,8 +111,9 @@ public class BadManager : MonoBehaviour
         if (getDB)
         {
             Debug.Log("getting DB by UI");
-            // makeFadeIn = true;
-            Debug.Log("got data and Ordered to make screen FadeIn");
+            // makeFadeOut = true;
+            PlayerPrefs.SetInt("ending", 1);
+            Debug.Log("PlayerPrefs_ending = " + PlayerPrefs.GetInt("ending"));
             getDB = false;
         }
     }

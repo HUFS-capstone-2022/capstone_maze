@@ -12,6 +12,9 @@ public class NormalUnit : MonoBehaviour
     private NavMeshAgent navAgent;
     private Animator anim;
 
+    public AudioClip p_ak_2;
+    private new AudioSource audio;
+
     private Vector3 destination = new Vector3(4.61f, 0.0f, 53.44f);
 
     // Check, if this object wants to attack
@@ -27,6 +30,8 @@ public class NormalUnit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.SetDestination(destination);
         anim = GetComponent<Animator>();
@@ -61,8 +66,8 @@ public class NormalUnit : MonoBehaviour
                 anim.SetBool("Shooting", true);
 
                 moving = false;
+                audio.Play();
             }
         }
-
     }
 }

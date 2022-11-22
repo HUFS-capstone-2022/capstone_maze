@@ -118,182 +118,92 @@ public class RankImportCopy : MonoBehaviour
             case < 2:
                 RankType.text = "True Ending";
                 ClearType = 1;
-                SetText_Output_True(final);
+                this.SetText_Output_True(final);
                 break;
             case > 2:
                 RankType.text = "Bad Ending";
                 ClearType = 3;
-                SetText_Output_Bad(final);
+                this.SetText_Output_Bad(final);
                 break;
             default:
                 RankType.text = "Normal Ending";
-                SetText_Output_Normal(final);
+                this.SetText_Output_Normal(final);
                 break;
         }
     }
 
     private void SetText_Output_True(Packets.find_res final)
     {
-        foreach(Packets.endType data in final.True)
+        for (int i = 0; i<final.True.Count; i++)
         {
-            this.WriteText1(data);
-            this.WriteText2(data);
-            this.WriteText3(data);
-            this.WriteText4(data);
-            this.WriteText5(data);
-            this.WriteText6(data);
-            this.WriteText7(data);
-            this.WriteText8(data);
+            Debug.Log(i);
+            if (final.True[i] != null){
+                this.WriteText(final.True[0], i);
+                Debug.LogFormat("True : {0}", final.True[i].clear_time);
+            }
         }
     }
 
     private void SetText_Output_Normal(Packets.find_res final)
     {
-        foreach(Packets.endType data in final.Normal)
+        for (int i = 0; i<final.Normal.Count; i++)
         {
-            this.WriteText1(data);
-            this.WriteText2(data);
-            this.WriteText3(data);
-            this.WriteText4(data);
-            this.WriteText5(data);
-            this.WriteText6(data);
-            this.WriteText7(data);
-            this.WriteText8(data);
+            Debug.Log(i);
+            if (final.Normal[i] != null){
+                this.WriteText(final.Normal[0], i);
+                Debug.LogFormat("Normal : {0}", final.Normal[i].clear_time);
+            }
         }
     }
 
     private void SetText_Output_Bad(Packets.find_res final)
     {
-        foreach(Packets.endType data in final.Bad)
+        for (int i = 0; i<final.Bad.Count; i++)
         {
-            this.WriteText1(data);
-            this.WriteText2(data);
-            this.WriteText3(data);
-            this.WriteText4(data);
-            this.WriteText5(data);
-            this.WriteText6(data);
-            this.WriteText7(data);
-            this.WriteText8(data);
+            Debug.Log(i);
+            if (final.Bad[i] != null){
+                this.WriteText(final.Bad[0], i);
+                Debug.LogFormat("Bad : {0}", final.Bad[i].clear_time);
+            }
         }
     }
 
-    private void WriteText1(Packets.endType data)
+    private void WriteText(Packets.info_userData data, int i)
     {
         string userName = "";
         string userClearTime = "";
-        if (data.rank1 != null)
+        if (data != null)
         {
-            foreach(Packets.info_userData text in data.rank1)
-            {
-                userName += string.Format("{0}", text.name);
-                userClearTime += string.Format("{0}", text.clear_time.ToString("H:mm:ss"));
-            }
-            OutputText1(userName, userClearTime);
-        }
-    }
+            userName += string.Format("{0}", data.name);
+            userClearTime += string.Format("{0}", data.clear_time.ToString("H:mm:ss"));
 
-    private void WriteText2(Packets.endType data)
-    {
-        string userName = "";
-        string userClearTime = "";
-        if (data.rank2 != null)
-        {
-            foreach(Packets.info_userData text in data.rank2)
+            switch (i)
             {
-                userName += string.Format("{0}", text.name);
-                userClearTime += string.Format("{0}", text.clear_time.ToString("H:mm:ss"));
+                case 0:
+                    OutputText1(userName, userClearTime);
+                    break;
+                case 1:
+                    OutputText2(userName, userClearTime);
+                    break;
+                case 2:
+                    OutputText3(userName, userClearTime);
+                    break;
+                case 3:
+                    OutputText4(userName, userClearTime);
+                    break;
+                case 4:
+                    OutputText5(userName, userClearTime);
+                    break;
+                case 5:
+                    OutputText6(userName, userClearTime);
+                    break;
+                case 6:
+                    OutputText7(userName, userClearTime);
+                    break;
+                case 7:
+                    OutputText8(userName, userClearTime);
+                    break;
             }
-            OutputText2(userName, userClearTime);
-        }
-    }
-
-    private void WriteText3(Packets.endType data)
-    {
-        string userName = "";
-        string userClearTime = "";
-        if (data.rank3 != null)
-        {
-            foreach(Packets.info_userData text in data.rank3)
-            {
-                userName += string.Format("{0}", text.name);
-                userClearTime += string.Format("{0}", text.clear_time.ToString("H:mm:ss"));
-            }
-            OutputText3(userName, userClearTime);
-        }
-    }
-
-    private void WriteText4(Packets.endType data)
-    {
-        string userName = "";
-        string userClearTime = "";
-        if (data.rank4 != null)
-        {
-            foreach(Packets.info_userData text in data.rank4)
-            {
-                userName += string.Format("{0}", text.name);
-                userClearTime += string.Format("{0}", text.clear_time.ToString("H:mm:ss"));
-            }
-            OutputText4(userName, userClearTime);
-        }
-    }
-    
-    private void WriteText5(Packets.endType data)
-    {
-        string userName = "";
-        string userClearTime = "";
-        if (data.rank5 != null)
-        {
-            foreach(Packets.info_userData text in data.rank5)
-            {
-                userName += string.Format("{0}", text.name);
-                userClearTime += string.Format("{0}", text.clear_time.ToString("H:mm:ss"));
-            }
-            OutputText5(userName, userClearTime);
-        }
-    }
-    
-    private void WriteText6(Packets.endType data)
-    {
-        string userName = "";
-        string userClearTime = "";
-        if (data.rank6 != null)
-        {
-            foreach(Packets.info_userData text in data.rank6)
-            {
-                userName += string.Format("{0}", text.name);
-                userClearTime += string.Format("{0}", text.clear_time.ToString("H:mm:ss"));
-            }
-            OutputText6(userName, userClearTime);
-        }
-    }
-    
-    private void WriteText7(Packets.endType data)
-    {
-        string userName = "";
-        string userClearTime = "";
-        if (data.rank7 != null)
-        {
-            foreach(Packets.info_userData text in data.rank7)
-            {
-                userName += string.Format("{0}", text.name);
-                userClearTime += string.Format("{0}", text.clear_time.ToString("H:mm:ss"));
-            }
-            OutputText7(userName, userClearTime);
-        }
-    }
-
-    private void WriteText8(Packets.endType data)
-    {
-        string userName = "";
-        string userClearTime = "";
-        if (data.rank8 != null)
-        {
-            foreach(Packets.info_userData text in data.rank8)
-            {
-                userName += string.Format("{0}", text.name);
-                userClearTime += string.Format("{0}", text.clear_time.ToString("H:mm:ss"));
-            }
-            OutputText8(userName, userClearTime);
         }
     }
 

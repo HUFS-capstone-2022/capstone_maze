@@ -20,22 +20,9 @@ namespace ProtocolsCopy
         // : 서버 -> 클라이언트
         public class find_res
         {
-            public List<endType> True;
-            public List<endType> Normal;
-            public List<endType> Bad;
-        }
-
-        public class endType
-        {
-            public List<info_userData> rank1;
-            public List<info_userData> rank2;
-            public List<info_userData> rank3;
-            public List<info_userData> rank4;
-            public List<info_userData> rank5;
-            public List<info_userData> rank6;
-            public List<info_userData> rank7;
-            public List<info_userData> rank8;
-
+            public List<info_userData> True;
+            public List<info_userData> Normal;
+            public List<info_userData> Bad;
         }
 
         // : 역직렬화 대상

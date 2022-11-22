@@ -14,9 +14,9 @@ router.post("/", async(req, res) => {
     // // db에 보낼 query들
     const dbquery1 = `INSERT IGNORE INTO Player (Player_id) VALUES (${PlayerId}); `;
     // const dbquery2 = `INSERT INTO ${rankType}_ending (id, name, clear_time, clear_type) VALUES (${PlayerId}, ${PlayerName}, ${PlayerClearTime}, ${PlayerClearType}); `;
-    const dbquery2 = `SELECT * FROM True_ending ORDER BY clear_time DESC LIMIT 8; `;
-    const dbquery3 = `SELECT * FROM Normal_ending ORDER BY clear_time DESC LIMIT 8; `;
-    const dbquery4 = `SELECT * FROM Bad_ending ORDER BY clear_time DESC LIMIT 8; `;
+    const dbquery2 = `SELECT * FROM True_ending ORDER BY clear_time LIMIT 8; `;
+    const dbquery3 = `SELECT * FROM Normal_ending ORDER BY clear_time LIMIT 8; `;
+    const dbquery4 = `SELECT * FROM Bad_ending ORDER BY clear_time LIMIT 8; `;
     try {
         // const infoRankData = await db.query(dbquery1 + dbquery2 + dbquery3 + dbquery4)
         // const infoRankData = await db.query(`select * from ${rankType}_ending where id=${PlayerId}; select * from ${rankType}_ending where id=${PlayerId};`);

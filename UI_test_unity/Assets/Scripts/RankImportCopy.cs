@@ -51,10 +51,9 @@ public class RankImportCopy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.LogFormat("start2 {0}", final);
-        this.SetText_Output_Normal(final);
         LeftButton.onClick.AddListener(() => OnButtonClick(LeftButton));
         RightButton.onClick.AddListener(() => OnButtonClick(RightButton));
+        Debug.LogFormat("start2 {0}", final);
     }
 
     // : Request
@@ -100,6 +99,8 @@ public class RankImportCopy : MonoBehaviour
             final = JsonConvert.DeserializeObject<Packets.find_res>(resultJson);
 
         }
+        this.SetText_Output_Null();
+        this.SetText_Output_Normal(final);
         webRequest.Dispose();
     }
 
@@ -118,18 +119,41 @@ public class RankImportCopy : MonoBehaviour
             case < 2:
                 RankType.text = "True Ending";
                 ClearType = 1;
+                this.SetText_Output_Null();
                 this.SetText_Output_True(final);
                 break;
             case > 2:
                 RankType.text = "Bad Ending";
                 ClearType = 3;
+                this.SetText_Output_Null();
                 this.SetText_Output_Bad(final);
                 break;
             default:
                 RankType.text = "Normal Ending";
+                this.SetText_Output_Null();
                 this.SetText_Output_Normal(final);
                 break;
         }
+    }
+
+    private void SetText_Output_Null()
+    {
+        this.PlayerName1.enabled = false;
+        this.ClearTime1.enabled = false;
+        this.PlayerName2.enabled = false;
+        this.ClearTime2.enabled = false;
+        this.PlayerName3.enabled = false;
+        this.ClearTime3.enabled = false;
+        this.PlayerName4.enabled = false;
+        this.ClearTime4.enabled = false;
+        this.PlayerName5.enabled = false;
+        this.ClearTime5.enabled = false;
+        this.PlayerName6.enabled = false;
+        this.ClearTime6.enabled = false;
+        this.PlayerName7.enabled = false;
+        this.ClearTime7.enabled = false;
+        this.PlayerName8.enabled = false;
+        this.ClearTime8.enabled = false;
     }
 
     private void SetText_Output_True(Packets.find_res final)
@@ -138,7 +162,7 @@ public class RankImportCopy : MonoBehaviour
         {
             Debug.Log(i);
             if (final.True[i] != null){
-                this.WriteText(final.True[0], i);
+                this.WriteText(final.True[i], i);
                 Debug.LogFormat("True : {0}", final.True[i].clear_time);
             }
         }
@@ -150,7 +174,7 @@ public class RankImportCopy : MonoBehaviour
         {
             Debug.Log(i);
             if (final.Normal[i] != null){
-                this.WriteText(final.Normal[0], i);
+                this.WriteText(final.Normal[i], i);
                 Debug.LogFormat("Normal : {0}", final.Normal[i].clear_time);
             }
         }
@@ -162,7 +186,7 @@ public class RankImportCopy : MonoBehaviour
         {
             Debug.Log(i);
             if (final.Bad[i] != null){
-                this.WriteText(final.Bad[0], i);
+                this.WriteText(final.Bad[i], i);
                 Debug.LogFormat("Bad : {0}", final.Bad[i].clear_time);
             }
         }
@@ -181,27 +205,35 @@ public class RankImportCopy : MonoBehaviour
             {
                 case 0:
                     OutputText1(userName, userClearTime);
+                    Debug.Log("1");
                     break;
                 case 1:
                     OutputText2(userName, userClearTime);
+                    Debug.Log("2");
                     break;
                 case 2:
                     OutputText3(userName, userClearTime);
+                    Debug.Log("3");
                     break;
                 case 3:
                     OutputText4(userName, userClearTime);
+                    Debug.Log("4");
                     break;
                 case 4:
                     OutputText5(userName, userClearTime);
+                    Debug.Log("5");
                     break;
                 case 5:
                     OutputText6(userName, userClearTime);
+                    Debug.Log("6");
                     break;
                 case 6:
                     OutputText7(userName, userClearTime);
+                    Debug.Log("7");
                     break;
                 case 7:
                     OutputText8(userName, userClearTime);
+                    Debug.Log("8");
                     break;
             }
         }
@@ -209,48 +241,64 @@ public class RankImportCopy : MonoBehaviour
 
     private void OutputText1(string name, string clear_time)
     {
+        this.PlayerName1.enabled = true;
+        this.ClearTime1.enabled = true;
         this.PlayerName1.text = name;
         this.ClearTime1.text = clear_time;
     }
 
     private void OutputText2(string name, string clear_time)
     {
+        this.PlayerName2.enabled = true;
+        this.ClearTime2.enabled = true;
         this.PlayerName2.text = name;
         this.ClearTime2.text = clear_time;
     }
 
     private void OutputText3(string name, string clear_time)
     {
+        this.PlayerName3.enabled = true;
+        this.ClearTime3.enabled = true;
         this.PlayerName3.text = name;
         this.ClearTime3.text = clear_time;
     }
 
     private void OutputText4(string name, string clear_time)
     {
+        this.PlayerName4.enabled = true;
+        this.ClearTime4.enabled = true;
         this.PlayerName4.text = name;
         this.ClearTime4.text = clear_time;
     }
 
     private void OutputText5(string name, string clear_time)
     {
+        this.PlayerName5.enabled = true;
+        this.ClearTime5.enabled = true;
         this.PlayerName5.text = name;
         this.ClearTime5.text = clear_time;
     }
 
     private void OutputText6(string name, string clear_time)
     {
+        this.PlayerName6.enabled = true;
+        this.ClearTime6.enabled = true;
         this.PlayerName6.text = name;
         this.ClearTime6.text = clear_time;
     }
 
     private void OutputText7(string name, string clear_time)
     {
+        this.PlayerName7.enabled = true;
+        this.ClearTime7.enabled = true;
         this.PlayerName7.text = name;
         this.ClearTime7.text = clear_time;
     }
 
     private void OutputText8(string name, string clear_time)
     {
+        this.PlayerName8.enabled = true;
+        this.ClearTime8.enabled = true;
         this.PlayerName8.text = name;
         this.ClearTime8.text = clear_time;
     }

@@ -776,6 +776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearTime2
       objectReference: {fileID: 0}
+    - target: {fileID: 2110235017224467445, guid: a1040b7975f3d46bc92806c61fc60fbd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2110235017294558410, guid: a1040b7975f3d46bc92806c61fc60fbd, type: 3}
       propertyPath: m_Name
       value: Ranking8

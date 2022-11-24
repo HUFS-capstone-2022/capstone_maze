@@ -66,6 +66,6 @@ public class TrueFading : MonoBehaviour
         foColor2.a = Mathf.Lerp(0, 1, timer / fadeDuration);
         render.material.SetColor("_Color", foColor2);
 
-        SceneManager.LoadScene("Boat_moving");
+        SceneManager.LoadScene("Boat_Moving");
     }
 }

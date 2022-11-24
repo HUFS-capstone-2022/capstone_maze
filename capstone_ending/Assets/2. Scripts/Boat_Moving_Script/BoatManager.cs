@@ -25,7 +25,9 @@ public class BoatManager : MonoBehaviour
     public bool getDB = false;
 
     // 4. Make screen Fade In after get DB data
-    public bool makeFadeIn = false;
+    public bool makeFadeOut = false;
+
+    public bool makePlayerMove = false;
 
 
     // Awake()
@@ -56,7 +58,7 @@ public class BoatManager : MonoBehaviour
         if (getDB)
         {
             Debug.Log("getting DB by UI");
-            // makeFadeIn = true;
+            // makeFadeOut = true;
             // Debug.Log("got data and Ordered to make screen FadeIn");
             getDB = false;
         }

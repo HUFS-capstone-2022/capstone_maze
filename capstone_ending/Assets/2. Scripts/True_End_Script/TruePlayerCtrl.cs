@@ -9,7 +9,7 @@ public class TruePlayerCtrl : MonoBehaviour
     
 // Values for set destination or check player is arrived
     float distance = 0.0f;
-    private Vector3 destination = new Vector3(97.0f, 13.45f, -74.0f);
+    private Vector3 destination = new Vector3(108.7f, 13.372f, -71.1f);
 
     public bool setAgentDest = true;
     public bool arrived = false;

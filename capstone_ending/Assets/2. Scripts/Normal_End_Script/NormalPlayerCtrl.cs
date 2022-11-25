@@ -12,11 +12,13 @@ public class NormalPlayerCtrl : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     public float smoothTime = 2.0f;
     float distance = 0.0f;
+    private AudioSource audiosource;
 
     // Start is called before the first frame update
     void Start()
     {
         playerTr = GetComponent<Transform>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

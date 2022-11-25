@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // Script execution order --> This script have to execute faster than other scripts
@@ -23,9 +24,9 @@ public class BadManager : MonoBehaviour
         }
     }
 
-// Values
+    // Values
 
-// 0. Must need values
+    // 0. Must need values
     // Value for caching player's transform component
     private Transform playerTr;
     public bool playerMove = false;

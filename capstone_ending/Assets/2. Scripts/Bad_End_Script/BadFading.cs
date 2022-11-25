@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class BadFading : MonoBehaviour
 {
-    public bool fadeOnStart = true;
-    public float fadeDuration = 2.0f;
-    public Color fadeColor;
-    private Renderer render;
+    public float fadeDuration = 2.0f;   // Fading 시간
+    public Color fadeColor; // Fade 색 지정(검정)
+    private Renderer render;    // 렌더 컴포넌트 캐시 변수
 
     // Start is called before the first frame update
     void Start()
     {
-        render = GetComponent<Renderer>();
-        if (fadeOnStart)
-        {
-            StartCoroutine(FadeIn());
-        }
+        render = GetComponent<Renderer>();      // 렌더링 컴포넌트 저장
+        // 씬 시작 시 FadeIn 코루틴 호출
+        StartCoroutine(FadeIn());
     }
 
     void Update()
@@ -29,6 +26,7 @@ public class BadFading : MonoBehaviour
         }
     }
 
+    // FadeIn 코루틴
     public IEnumerator FadeIn()
     {
         float timer = 0.0f;

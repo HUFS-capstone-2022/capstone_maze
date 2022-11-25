@@ -20,11 +20,21 @@ public class MakeOutline : MonoBehaviour
             renderers.materials = materialList.ToArray();
         }
     }
+    void OnTriggerStay(Collider other)
+    {
+        Renderer renderer = this.GetComponent<Renderer>();
+        materialList.Clear();
+        materialList.AddRange(renderer.sharedMaterials);
+        materialList.Remove(outline);
+
+        renderer.materials = materialList.ToArray();
+    }
     void OnTriggerExit(Collider other)
     {
         Renderer renderer = this.GetComponent<Renderer>();
         materialList.Clear();
         materialList.AddRange(renderer.sharedMaterials);
+
         materialList.Remove(outline);
 
         renderer.materials = materialList.ToArray();

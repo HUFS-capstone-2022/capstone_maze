@@ -30,8 +30,7 @@ namespace GameStartProtocols
         {
             public int id;
             public string name;
-            public DateTime clear_time;
-            public int clear_type;
+            public string clear_time;
         }
     }
 }

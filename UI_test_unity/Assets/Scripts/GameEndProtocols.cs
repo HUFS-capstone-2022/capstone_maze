@@ -10,9 +10,15 @@ namespace GameEndProtocols
         public class find_req
         {
             public string userId;
-            public find_req(string userId)
+            public string userName;
+            public string userClearTime;
+            public string userClearType;
+            public find_req(string userId, string userName, string userClearTime, string userClearType)
             {
                 this.userId = userId;
+                this.userName = userName;
+                this.userClearTime = userClearTime;
+                this.userClearType = userClearType;
             }
         }
 
@@ -20,9 +26,7 @@ namespace GameEndProtocols
         // : 서버 -> 클라이언트
         public class find_res
         {
-            public List<info_userData> True;
-            public List<info_userData> Normal;
-            public List<info_userData> Bad;
+            public List<info_userData> end;
         }
 
         // : 역직렬화 대상
@@ -30,8 +34,7 @@ namespace GameEndProtocols
         {
             public int id;
             public string name;
-            public DateTime clear_time;
-            public int clear_type;
+            public string clear_time;
         }
     }
 }

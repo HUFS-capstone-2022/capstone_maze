@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using System.Collections;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -48,48 +49,32 @@ public class GameEndScript : MonoBehaviour
     const string SERVER_HOST = "http://localhost:";
     const int SERVER_PORT = 4000;
 
-    // void Awake() 
-    // {
-    // }
-
     // Start is called before the first frame update
     void Start()
     {
         this.Submit.onClick.AddListener(() => {
-            // PlayerPrefs.SetString("PlayerId", "10");
+            PlayerPrefs.SetString("ClearType", "Normal");
+            string userId = PlayerPrefs.GetString("PlayerId");
             string userName = IFIELD_UserName.text;
-            // PlaeyrPrefs.SetInt("ClearType", "2");
-            // Packets.find_req findRequest = new Packets.find_req(PlayerId, userName, ClearType, ClearTime);
-            string userId = "5";
+            string startTime = PlayerPrefs.GetString("StartTime");
+            Debug.Log(startTime);
+            DateTime start = DateTime.ParseExact(startTime, @"MM\/dd\/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+            Debug.Log(start);
+            TimeSpan ts = DateTime.Now - start;
+            Debug.Log(ts);
+            string totalTime = ts.ToString();
+            Debug.Log(totalTime);
+            string userClearTime = totalTime;
+            string userClearType = PlayerPrefs.GetString("ClearType");
             Debug.Log(userName);
-            Packets.find_req findRequest = new Packets.find_req(userId);
+            Packets.find_req findRequest = new Packets.find_req(userId, userName, userClearTime, userClearType);
             // :: 요청
             this.StartCoroutine(this.RequestFind(findRequest));
-            EndType.text = "Normal Ending";
-            // switch (ClearType)
-            // {
-            //     case < 2:
-            //         EndType.text = "True Ending";
-            //         ClearType = 1;
-            //         this.SetText_Output_Null();
-            //         this.SetText_Output_True(final);
-            //         break;
-            //     case > 2:
-            //         EndType.text = "Bad Ending";
-            //         ClearType = 3;
-            //         this.SetText_Output_Null();
-            //         this.SetText_Output_Bad(final);
-            //         break;
-            //     default:
-            //         EndType.text = "Normal Ending";
-            //         this.SetText_Output_Null();
-            //         this.SetText_Output_Normal(final);
-            //         break;
-            // }
+            EndType.text = userClearType + " Ending";
         });
         GameEnd.onClick.AddListener(() => OnButtonClick(GameEnd));
         GameRestart.onClick.AddListener(() => OnButtonClick(GameRestart));
-        Debug.LogFormat("start2 {0}", final);
+        Debug.LogFormat("end {0}", final);
     }
 
     // : Request
@@ -100,9 +85,9 @@ public class GameEndScript : MonoBehaviour
         string json = JsonConvert.SerializeObject(packet);
 
         // :: 요청객체 생성
-        string url = string.Format("{0}{1}", SERVER_HOST + SERVER_PORT, "/ranking");
+        // string url = string.Format("{0}{1}", SERVER_HOST + SERVER_PORT, "/ranking");
         // string url = string.Format("{0}{1}", SERVER_HOST + SERVER_PORT, "/ranking/start");
-        // string url = string.Format("{0}{1}", SERVER_HOST + SERVER_PORT, "/ranking/end");
+        string url = string.Format("{0}{1}", SERVER_HOST + SERVER_PORT, "/ranking/end");
         UnityWebRequest webRequest = new UnityWebRequest(url, "POST");
 
         // :: 바디
@@ -138,7 +123,7 @@ public class GameEndScript : MonoBehaviour
 
         }
         this.SetText_Output_Null();
-        this.SetText_Output_Normal(final);
+        this.SetText_Output_End(final);
         webRequest.Dispose();
     }
 
@@ -188,38 +173,15 @@ public class GameEndScript : MonoBehaviour
         this.ClearTime8.enabled = false;
     }
 
-    private void SetText_Output_True(Packets.find_res final)
+    private void SetText_Output_End(Packets.find_res final)
     {
-        for (int i = 0; i<final.True.Count; i++)
+        RankType.text = PlayerPrefs.GetString("ClearType") + " Ending";
+        for (int i = 0; i<final.end.Count; i++)
         {
-            Debug.Log(i);
-            if (final.True[i] != null){
-                this.WriteText(final.True[i], i);
-                Debug.LogFormat("True : {0}", final.True[i].clear_time);
-            }
-        }
-    }
-
-    private void SetText_Output_Normal(Packets.find_res final)
-    {
-        for (int i = 0; i<final.Normal.Count; i++)
-        {
-            Debug.Log(i);
-            if (final.Normal[i] != null){
-                this.WriteText(final.Normal[i], i);
-                Debug.LogFormat("Normal : {0}", final.Normal[i].clear_time);
-            }
-        }
-    }
-
-    private void SetText_Output_Bad(Packets.find_res final)
-    {
-        for (int i = 0; i<final.Bad.Count; i++)
-        {
-            Debug.Log(i);
-            if (final.Bad[i] != null){
-                this.WriteText(final.Bad[i], i);
-                Debug.LogFormat("Bad : {0}", final.Bad[i].clear_time);
+            // Debug.Log(i);
+            if (final.end[i] != null){
+                this.WriteText(final.end[i], i);
+                // Debug.LogFormat("End : {0}", final.end[i].clear_time);
             }
         }
     }
@@ -231,41 +193,41 @@ public class GameEndScript : MonoBehaviour
         if (data != null)
         {
             userName += string.Format("{0}", data.name);
-            userClearTime += string.Format("{0}", data.clear_time.ToString("H:mm:ss"));
+            userClearTime += string.Format("{0}", data.clear_time);
 
             switch (i)
             {
                 case 0:
                     OutputText1(userName, userClearTime);
-                    Debug.Log("1");
+                    // Debug.Log("1");
                     break;
                 case 1:
                     OutputText2(userName, userClearTime);
-                    Debug.Log("2");
+                    // Debug.Log("2");
                     break;
                 case 2:
                     OutputText3(userName, userClearTime);
-                    Debug.Log("3");
+                    // Debug.Log("3");
                     break;
                 case 3:
                     OutputText4(userName, userClearTime);
-                    Debug.Log("4");
+                    // Debug.Log("4");
                     break;
                 case 4:
                     OutputText5(userName, userClearTime);
-                    Debug.Log("5");
+                    // Debug.Log("5");
                     break;
                 case 5:
                     OutputText6(userName, userClearTime);
-                    Debug.Log("6");
+                    // Debug.Log("6");
                     break;
                 case 6:
                     OutputText7(userName, userClearTime);
-                    Debug.Log("7");
+                    // Debug.Log("7");
                     break;
                 case 7:
                     OutputText8(userName, userClearTime);
-                    Debug.Log("8");
+                    // Debug.Log("8");
                     break;
             }
         }

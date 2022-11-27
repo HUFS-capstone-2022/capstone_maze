@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 3370824360905988704}
   - component: {fileID: 3370824360909380160}
   - component: {fileID: 3370824360908413056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladder01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3370824360905988704
 Transform:
@@ -50,7 +50,7 @@ MeshRenderer:
   m_GameObject: {fileID: 3370824360906409536}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -94,12 +94,12 @@ GameObject:
   - component: {fileID: 3370824360905988706}
   - component: {fileID: 3370824360909380162}
   - component: {fileID: 3370824360908413058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladder01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3370824360905988706
 Transform:
@@ -133,7 +133,7 @@ MeshRenderer:
   m_GameObject: {fileID: 3370824360906409538}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -177,12 +177,12 @@ GameObject:
   - component: {fileID: 3370824360905988710}
   - component: {fileID: 3370824360909380166}
   - component: {fileID: 3370824360908413062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladder01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3370824360905988710
 Transform:
@@ -216,7 +216,7 @@ MeshRenderer:
   m_GameObject: {fileID: 3370824360906409542}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -234,7 +234,7 @@ MeshRenderer:
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: 0.5
   m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -259,12 +259,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4028530017582641696}
   - component: {fileID: 3370824360925728452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4028530017582641696
 Transform:
@@ -273,7 +273,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4034375754206201912}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 28.14, y: 4.75, z: 1.89}
   m_LocalScale: {x: 2, y: 2.3, z: 2}
   m_ConstrainProportionsScale: 0

@@ -34,7 +34,7 @@ public class TruePlayerCtrl : MonoBehaviour
 
             distance = Vector3.Distance(playerTr.position, destination);
 
-            if (distance < 0.1f)
+            if (distance < 0.2f)
             {
                 navAgent.isStopped = true;
                 TrueManager.Instance.makePlayerMoving = false;

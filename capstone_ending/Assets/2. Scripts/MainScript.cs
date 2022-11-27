@@ -13,6 +13,7 @@ public class MainScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 이거 빼
         PlayerPrefs.SetInt("ending", 0);
         Debug.Log("now value of PlayerPrefs_ending = " + PlayerPrefs.GetInt("ending"));
 
@@ -23,7 +24,7 @@ public class MainScript : MonoBehaviour
         }
     }
 
-
+    // 냅둬
     public IEnumerator FadeIn()
     {
         float timer = 0.0f;
@@ -41,6 +42,7 @@ public class MainScript : MonoBehaviour
         render.material.SetColor("_Color", fiColor2);
     }
 
+    // 냅둬
     public IEnumerator FadeOut()
     {
         float timer = 0.0f;
@@ -59,7 +61,7 @@ public class MainScript : MonoBehaviour
         render.material.SetColor("_Color", foColor2);
     }
 
-
+    // 트리거 이거 써
     private void OnTriggerEnter(Collider other)
     {
         // 각각 다른 씬(Scene) 호출
@@ -68,7 +70,7 @@ public class MainScript : MonoBehaviour
         if (other.gameObject.name == "True")
         {
             StartCoroutine(FadeOut());
-            // SceneManager.LoadScene("True_End_Scene");
+            SceneManager.LoadScene("True_End_Scene");
         }
         // 상대 게임 오브젝트 태그가 NormalEnd 라면
         else if (other.gameObject.name == "Normal")

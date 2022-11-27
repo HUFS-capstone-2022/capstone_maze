@@ -13,7 +13,7 @@ public class NormalUnit1 : MonoBehaviour
     private Animator anim;
     private AudioSource audiosource;
 
-    private Vector3 destination = new Vector3(14.04f, 0.0f, 48.38f);
+    private Vector3 destination = new Vector3(13.4f, 0.0f, 48.38f);
 
     // Check, if this object wants to attack
     public bool isAttack = false;

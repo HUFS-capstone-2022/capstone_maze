@@ -373,6 +373,7 @@
 "Assets/2. Scripts/Bad_End_Script/BadPlayerCtrl.cs"
 "Assets/2. Scripts/Bad_End_Script/BadUnit.cs"
 "Assets/2. Scripts/Boat_Moving_Script/BoatFading.cs"
+"Assets/2. Scripts/Boat_Moving_Script/BoatGrayScale.cs"
 "Assets/2. Scripts/Boat_Moving_Script/BoatManager.cs"
 "Assets/2. Scripts/Boat_Moving_Script/BoatMoving.cs"
 "Assets/2. Scripts/CameraCtrl.cs"

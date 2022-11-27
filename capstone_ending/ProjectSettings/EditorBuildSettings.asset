@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1. Scenes/True_End_Scene.unity
     guid: cbcee31bfe401b94da74682e2a103981
+  - enabled: 1
+    path: Assets/1. Scenes/Boat_Moving.unity
+    guid: 2a12c0275691add40bd5d0241d5842b4
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 50195e831cc688e4aa3aaf75bb37d2c1, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e5ef895c000422f48950bc45a44ee54d, type: 2}

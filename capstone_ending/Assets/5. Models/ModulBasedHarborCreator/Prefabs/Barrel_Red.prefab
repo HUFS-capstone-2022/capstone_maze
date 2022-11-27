@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 935917801254569529}
   - component: {fileID: 935917801251145241}
   - component: {fileID: 935917801252275417}
-  - component: {fileID: 1888335297760140292}
   m_Layer: 0
   m_Name: Barrel_LOD1
   m_TagString: Untagged
@@ -146,19 +145,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1888335297760140292
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935917801254279705}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.74080676, y: 1.1349452, z: 0.72924787}
-  m_Center: {x: 0.00014191866, y: 0.5667801, z: -0.005138725}
 --- !u!1 &935917801254279707
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +156,6 @@ GameObject:
   - component: {fileID: 935917801254569531}
   - component: {fileID: 935917801251145243}
   - component: {fileID: 935917801252275419}
-  - component: {fileID: 4831903272762117057}
   m_Layer: 0
   m_Name: Barrel_LOD2
   m_TagString: Untagged
@@ -243,19 +228,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4831903272762117057
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935917801254279707}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7341362, y: 1.1294489, z: 0.7225357}
-  m_Center: {x: 0.00024543703, y: 0.56403196, z: -0.005358562}
 --- !u!1 &935917801254279711
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +239,6 @@ GameObject:
   - component: {fileID: 935917801254569535}
   - component: {fileID: 935917801251145247}
   - component: {fileID: 935917801252275423}
-  - component: {fileID: 6545127598972900499}
   m_Layer: 0
   m_Name: Barrel_LOD0
   m_TagString: Untagged
@@ -340,16 +311,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6545127598972900499
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935917801254279711}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.74080676, y: 1.1366558, z: 0.72924787}
-  m_Center: {x: 0.00014191866, y: 0.5676354, z: -0.005138725}

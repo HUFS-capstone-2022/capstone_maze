@@ -30,14 +30,14 @@ public class BoatMoving : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(direction);
 
             boatTr.rotation = Quaternion.Slerp(boatTr.rotation, rot, Time.deltaTime * 0.8f);
-            boatTr.position = Vector3.Lerp(boatTr.position, destination, Time.deltaTime*0.05f);
+            boatTr.position = Vector3.Lerp(boatTr.position, destination, Time.deltaTime*0.1f);
           
             // If Player is about arrived
-            if (boatTr.position.x > 400.0f)
+            if (boatTr.position.x > 700.0f)
             {
                 BoatManager.Instance.makePlayerMove = false;
                 Debug.Log("Player is arrived!");
-                BoatManager.Instance.getDB = true;
+                BoatManager.Instance.makeGrayScale = true;
             }
         }
     }

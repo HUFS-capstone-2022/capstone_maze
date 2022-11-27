@@ -29,6 +29,7 @@ public class BoatManager : MonoBehaviour
 
     public bool makePlayerMove = false;
 
+    public bool makeGrayScale = false;
 
     // Awake()
     private void Awake()
@@ -52,7 +53,6 @@ public class BoatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
 
         // 3. get DB data
         if (getDB)

@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 public class GrabHandPosekey : MonoBehaviour
 {
@@ -17,7 +14,6 @@ public class GrabHandPosekey : MonoBehaviour
     private Vector3 finalHandPosition;
     private Quaternion startingHandRotation;
     private Quaternion finalHandRotation;
-    private bool isInteracting  = false;
 
     private Quaternion[] startingFingerRotations;
     private Quaternion[] finalFingerRotations;
@@ -32,21 +28,19 @@ public class GrabHandPosekey : MonoBehaviour
         leftHandPose.gameObject.SetActive(false);
         rightHandPose.gameObject.SetActive(false);
     }
-    private void OnTriggerEnter(Collider other)
+    public void stopHandPose()
     {
-        if(other.tag == "Door" && isInteracting==true)
-        {
+            Debug.Log("KEY TRIGGER EVENT ");
+            XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
             grabInteractable.selectExited.AddListener(UnSetPose);
             leftHandPose.gameObject.SetActive(false);
             rightHandPose.gameObject.SetActive(false);
-        }
     }
 
     public void SetupPose(BaseInteractionEventArgs arg)
     {
         if(arg.interactorObject is XRDirectInteractor)
         {
-            isInteracting = true;
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>();
             handData.animator.enabled = false;
             if(handData.handType == HandData.HandModelType.Left)
@@ -79,7 +73,6 @@ public class GrabHandPosekey : MonoBehaviour
 
         startingHandRotation = h1.root.localRotation;
         finalHandRotation = h2.root.localRotation;
-        Debug.Log("¤·");
         startingFingerRotations = new Quaternion[h1.fingerBones.Length];
         finalFingerRotations = new Quaternion[h1.fingerBones.Length];
 
@@ -120,28 +113,5 @@ public class GrabHandPosekey : MonoBehaviour
             yield return null;
         }
     }
-#if UNITY_EDITOR
 
-    [MenuItem("Tools/Mirror Selected Left Grab Pose")]
-    public static void MirrorLeftPose()
-    {
-        Debug.Log("MIRROR LEFT POSE");
-        GrabHandPose handPose = Selection.activeGameObject.GetComponent<GrabHandPose>();
-        handPose.MirrorPose(handPose.rightHandPose, handPose.leftHandPose);
-    }
-#endif
-    public void MirrorPose(HandData poseToMirror, HandData poseUsedToMirror)
-    {
-        //Vector3 mirroredPosition = poseUsedToMirror.root.localPosition;
-        //mirroredPosition.x *= -1;
-        //Quaternion mirroredQuaternion = poseUsedToMirror.root.localRotation;
-        //mirroredQuaternion.y *= -1;
-        //mirroredQuaternion.z *= -1;
-        //poseToMirror.root.localPosition = mirroredPosition;
-        //poseToMirror.root.localRotation = mirroredQuaternion;
-        for(int i = 0; i < poseUsedToMirror.fingerBones.Length; i++)
-        {
-            poseToMirror.fingerBones[i].localRotation = poseUsedToMirror.fingerBones[i].localRotation;
-        }
-    }
 }

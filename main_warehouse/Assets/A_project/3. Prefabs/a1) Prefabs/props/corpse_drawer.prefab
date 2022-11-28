@@ -129,7 +129,10 @@ GameObject:
   - component: {fileID: 490824}
   - component: {fileID: 3325896}
   - component: {fileID: 2314588}
-  - component: {fileID: 3237445400239380083}
+  - component: {fileID: 3774523115682133021}
+  - component: {fileID: 8671361510604320692}
+  - component: {fileID: 6029548418319557480}
+  - component: {fileID: 3942586540886339524}
   m_Layer: 0
   m_Name: corpse_drawer_body
   m_TagString: Untagged
@@ -202,8 +205,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3237445400239380083
-MeshCollider:
+--- !u!65 &3774523115682133021
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -212,10 +215,48 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300006, guid: 13bfd1087ab16c449aff52fb14fe867f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 70, z: 200.5}
+  m_Center: {x: -40, y: -0.38, z: 0}
+--- !u!65 &8671361510604320692
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 78.02, y: 17, z: 200}
+  m_Center: {x: 0, y: 25.9, z: 0}
+--- !u!65 &6029548418319557480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 70.5, y: 63.5, z: 2}
+  m_Center: {x: 0, y: 0, z: -105.52}
+--- !u!65 &3942586540886339524
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 67.4, z: 200}
+  m_Center: {x: 40, y: 0.4, z: 0.00024414062}
 --- !u!1 &157752
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +447,7 @@ GameObject:
   - component: {fileID: 1237648052539169049}
   - component: {fileID: 5062173504713401754}
   - component: {fileID: 1878234666181153776}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: corpse_drawer_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +667,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -662,7 +703,7 @@ HingeJoint:
   m_GameObject: {fileID: 8578869961735760472}
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: -0.12, y: -23.26, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
@@ -678,8 +719,8 @@ HingeJoint:
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
-    min: 124.147026
-    max: 180
+    min: -80
+    max: 0
     bounciness: 0
     bounceMinVelocity: 0.1
     contactDistance: 0

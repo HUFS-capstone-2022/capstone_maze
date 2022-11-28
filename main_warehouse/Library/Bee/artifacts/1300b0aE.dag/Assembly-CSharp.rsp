@@ -384,8 +384,10 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/A_project/2. Scripts/ActivateGrab.cs"
 "Assets/A_project/2. Scripts/BoxSound.cs"
+"Assets/A_project/2. Scripts/DoorInstance.cs"
 "Assets/A_project/2. Scripts/FakeDoor.cs"
 "Assets/A_project/2. Scripts/GrabHandPose.cs"
+"Assets/A_project/2. Scripts/GrabHandPosekey.cs"
 "Assets/A_project/2. Scripts/HandData.cs"
 "Assets/A_project/2. Scripts/handDataforPose.cs"
 "Assets/A_project/2. Scripts/HEADB.cs"
@@ -420,9 +422,6 @@
 "Assets/A_project/9. Resources/Security Systems/Free Version/Scripts/ObjectRotator.cs"
 "Assets/A_project/9. Resources/Security Systems/Free Version/Scripts/TabletDisplayController.cs"
 "Assets/A_project/9. Resources/Security Systems/Free Version/Scripts/TabletInput.cs"
-"Assets/A_project/9. Resources/UrbanGuy/Scripts/UrbanGuy_AssetsList.cs"
-"Assets/A_project/9. Resources/UrbanGuy/Scripts/UrbanGuy_CharacterCustomize.cs"
-"Assets/A_project/9. Resources/UrbanGuy/Scripts/UrbanGuy_Char_Instantiate.cs"
 "Assets/PXR_HANDtr.cs"
 -langversion:9.0
 

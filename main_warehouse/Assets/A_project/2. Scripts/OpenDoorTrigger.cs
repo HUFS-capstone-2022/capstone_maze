@@ -4,50 +4,19 @@ using UnityEngine;
 
 public class OpenDoorTrigger : MonoBehaviour
 {
-    GameObject nearObject;
+    public GameObject prefab;
     GameObject equipKey;
-    public GameObject[] keys;
-    public bool[] hasKey;
-    void Start()
+    private bool isInstance = false;
+    private void OnTriggerEnter(Collider other)
     {
-
-    }
-    void Update()
-    {
-        KeyInteract();
-    }
-    void KeyInteract()
-    {
-        if(nearObject != null)
+        if (other.gameObject.tag == "Key" && isInstance == false )
         {
-            if(nearObject.tag == "Key")
-            {
-                KeyNumber keynum = nearObject.GetComponent<KeyNumber>();
-                int keyIndex = keynum.value;
-                hasKey[keyIndex] = true;
-
-                Destroy(nearObject);
-
-                equipKey = keys[keyIndex];
-                equipKey.SetActive(true);
-
-            }
-        }
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Key")
-        {
-            nearObject = other.gameObject;
+            Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            GrabHandPosekey g = new GrabHandPosekey();
+            g.stopHandPose();
+            Destroy(other.gameObject);
             Debug.Log("key");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.tag == "Key")
-        {
-            nearObject = null;
+            isInstance = true;
         }
     }
 }

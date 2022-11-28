@@ -1,71 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoatFading : MonoBehaviour
 {
-    // Value for Material
-    private Material _material;
+    public bool fadeOnStart = true;
+    public float fadeDuration = 2.0f;
+    public Color fadeColor;
+    private Renderer render;
 
-    // Lerp Value to make fading
-    [Range(0.0f, 1.0f)]
-    public float fadeLerpVal = 1.000f;
-
-    // Awake()
-    private void Awake()
-    {
-        // Add Shader in [Edit] - [Project Setting] - [Graphics] - [Always included shaders] for use this
-        _material = new Material(Shader.Find("Hidden/Fade"));
-    }
-
-    // Start()
+    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FadeOut());
-        Debug.Log("FadeOut Coroutine called!!");
-    }
-
-    // Update()
-    void Update()
-    {
-        if (BoatManager.Instance.makeFadeIn)
+        render = GetComponent<Renderer>();
+        if (fadeOnStart)
         {
             StartCoroutine(FadeIn());
+        }
+    }
+
+    void Update()
+    {
+        if (BoatManager.Instance.makeFadeOut)
+        {
+            StartCoroutine(FadeOut());
             Debug.Log("Fade In Coroutine called!!");
-            BoatManager.Instance.makeFadeIn = false;
+            BoatManager.Instance.makeFadeOut = false;
         }
     }
 
-    private void OnRenderImage(RenderTexture source, RenderTexture destination)
+    public IEnumerator FadeIn()
     {
-        if (fadeLerpVal == 0)
+        float timer = 0.0f;
+        while (timer < fadeDuration)
         {
-            Graphics.Blit(source, destination);
-            return;
-        }
+            Color fiColor = fadeColor;
+            fiColor.a = Mathf.Lerp(1, 0, timer / fadeDuration);
+            render.material.SetColor("_Color", fiColor);
 
-        _material.SetFloat("_Fade", fadeLerpVal);
-        Graphics.Blit(source, destination, _material);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        Color fiColor2 = fadeColor;
+        fiColor2.a = Mathf.Lerp(1, 0, timer / fadeDuration);
+        render.material.SetColor("_Color", fiColor2);
+
+        BoatManager.Instance.makePlayerMove = true;
     }
 
-    // Fade In Coroutine
-    IEnumerator FadeIn()
+    public IEnumerator FadeOut()
     {
-        while (fadeLerpVal < 1.0f)
+        float timer = 0.0f;
+        fadeDuration = 1.0f;
+        while (timer < fadeDuration)
         {
-            fadeLerpVal = Mathf.Round((fadeLerpVal + 0.02f) * 100) * 0.01f;
-            yield return new WaitForSeconds(0.1f);
-        }
-        Debug.Log("FadeIn Coroutine End!");
-    }
+            Color foColor = fadeColor;
+            foColor.a = Mathf.Lerp(0, 1, timer / fadeDuration);
+            render.material.SetColor("_Color", foColor);
 
-    // Fade Out Coroutine
-    IEnumerator FadeOut()
-    {
-        while (fadeLerpVal > 0.0f)
-        {
-            yield return new WaitForSeconds(0.02f);
-            fadeLerpVal = Mathf.Round((fadeLerpVal - 0.02f) * 100) * 0.01f;
+            timer += Time.deltaTime;
+            yield return null;
         }
+        Color foColor2 = fadeColor;
+        foColor2.a = Mathf.Lerp(0, 1, timer / fadeDuration);
+        render.material.SetColor("_Color", foColor2);
     }
 }

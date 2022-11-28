@@ -9,7 +9,7 @@ public class TruePlayerCtrl : MonoBehaviour
     
 // Values for set destination or check player is arrived
     float distance = 0.0f;
-    private Vector3 destination = new Vector3(97.0f, 13.45f, -74.0f);
+    private Vector3 destination = new Vector3(108.7f, 13.372f, -71.1f);
 
     public bool setAgentDest = true;
     public bool arrived = false;
@@ -34,7 +34,7 @@ public class TruePlayerCtrl : MonoBehaviour
 
             distance = Vector3.Distance(playerTr.position, destination);
 
-            if (distance < 0.1f)
+            if (distance < 0.2f)
             {
                 navAgent.isStopped = true;
                 TrueManager.Instance.makePlayerMoving = false;
@@ -45,7 +45,7 @@ public class TruePlayerCtrl : MonoBehaviour
         if (arrived)
         {
             // fade In
-            TrueManager.Instance.makeFadeIn = true;
+            TrueManager.Instance.makeFadeOut = true;
         }
 
     }

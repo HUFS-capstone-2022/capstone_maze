@@ -48,7 +48,7 @@ public class NormalManager : MonoBehaviour
     public bool getDB = false;
 
 // 4. Make screen Fade In after get DB data
-    public bool makeFadeIn = false;
+    public bool makeFadeOut = false;
 
 
 // Awake()
@@ -81,14 +81,16 @@ public class NormalManager : MonoBehaviour
             Debug.Log("Ordered to make screen GrayScale");
             makeGrayScale = true;
             calledGrayScale = true;
+            
         }
 
         // 3. get DB data
         if (getDB)
         {
             Debug.Log("getting DB by UI");
-            // makeFadeIn = true;
-            Debug.Log("got data and Ordered to make screen FadeIn");
+            PlayerPrefs.SetInt("ending", 2);
+            // makeFadeOut = true;
+            Debug.Log("PlayerPrefs_ending = " + PlayerPrefs.GetInt("ending"));
             getDB = false;
         }
     }

@@ -1,58 +1,152 @@
 fileFormatVersion: 2
 guid: 8bde41a4a2c0a0741898e8869ca7db86
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Door01A
-    100004: Door01B
-    100006: RollupDoor
-    100008: WareHouse01Extended
-    100010: WareHouse01Extended_LOD0
-    100012: WareHouse01Extended_LOD1
-    100014: WareHouse01Extended_LOD2
-    400000: //RootNode
-    400002: Door01A
-    400004: Door01B
-    400006: RollupDoor
-    400008: WareHouse01Extended
-    400010: WareHouse01Extended_LOD0
-    400012: WareHouse01Extended_LOD1
-    400014: WareHouse01Extended_LOD2
-    2300000: //RootNode
-    2300002: Door01A
-    2300004: Door01B
-    2300006: RollupDoor
-    2300008: WareHouse01Extended
-    2300010: WareHouse01Extended_LOD0
-    2300012: WareHouse01Extended_LOD1
-    2300014: WareHouse01Extended_LOD2
-    3300000: //RootNode
-    3300002: Door01A
-    3300004: Door01B
-    3300006: RollupDoor
-    3300008: WareHouse01Extended
-    3300010: WareHouse01Extended_LOD0
-    3300012: WareHouse01Extended_LOD1
-    3300014: WareHouse01Extended_LOD2
-    4300000: polySurface1054
-    4300002: polySurface1056
-    4300004: pCube67
-    4300006: polySurface1055
-    4300008: polySurface1063
-    4300010: WareHouse01Extended
-    4300012: RollupDoor
-    4300014: Door01A
-    4300016: Door01B
-    4300018: WareHouse01Extended_LOD2
-    4300020: WareHouse01Extended_LOD0
-    4300022: WareHouse01Extended_LOD1
-    9500000: //RootNode
-    20500000: //RootNode
-    2186277476908879412: ImportLogs
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Door01A
+  - first:
+      1: 100004
+    second: Door01B
+  - first:
+      1: 100006
+    second: RollupDoor
+  - first:
+      1: 100008
+    second: WareHouse01Extended
+  - first:
+      1: 100010
+    second: WareHouse01Extended_LOD0
+  - first:
+      1: 100012
+    second: WareHouse01Extended_LOD1
+  - first:
+      1: 100014
+    second: WareHouse01Extended_LOD2
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Door01A
+  - first:
+      4: 400004
+    second: Door01B
+  - first:
+      4: 400006
+    second: RollupDoor
+  - first:
+      4: 400008
+    second: WareHouse01Extended
+  - first:
+      4: 400010
+    second: WareHouse01Extended_LOD0
+  - first:
+      4: 400012
+    second: WareHouse01Extended_LOD1
+  - first:
+      4: 400014
+    second: WareHouse01Extended_LOD2
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: Door01A
+  - first:
+      23: 2300004
+    second: Door01B
+  - first:
+      23: 2300006
+    second: RollupDoor
+  - first:
+      23: 2300008
+    second: WareHouse01Extended
+  - first:
+      23: 2300010
+    second: WareHouse01Extended_LOD0
+  - first:
+      23: 2300012
+    second: WareHouse01Extended_LOD1
+  - first:
+      23: 2300014
+    second: WareHouse01Extended_LOD2
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: Door01A
+  - first:
+      33: 3300004
+    second: Door01B
+  - first:
+      33: 3300006
+    second: RollupDoor
+  - first:
+      33: 3300008
+    second: WareHouse01Extended
+  - first:
+      33: 3300010
+    second: WareHouse01Extended_LOD0
+  - first:
+      33: 3300012
+    second: WareHouse01Extended_LOD1
+  - first:
+      33: 3300014
+    second: WareHouse01Extended_LOD2
+  - first:
+      43: 4300000
+    second: polySurface1054
+  - first:
+      43: 4300002
+    second: polySurface1056
+  - first:
+      43: 4300004
+    second: pCube67
+  - first:
+      43: 4300006
+    second: polySurface1055
+  - first:
+      43: 4300008
+    second: polySurface1063
+  - first:
+      43: 4300010
+    second: WareHouse01Extended
+  - first:
+      43: 4300012
+    second: RollupDoor
+  - first:
+      43: 4300014
+    second: Door01A
+  - first:
+      43: 4300016
+    second: Door01B
+  - first:
+      43: 4300018
+    second: WareHouse01Extended_LOD2
+  - first:
+      43: 4300020
+    second: WareHouse01Extended_LOD0
+  - first:
+      43: 4300022
+    second: WareHouse01Extended_LOD1
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      205: 20500000
+    second: //RootNode
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -61,6 +155,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -88,25 +183,34 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1
@@ -115,10 +219,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -128,13 +232,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 75
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

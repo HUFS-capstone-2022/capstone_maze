@@ -8,15 +8,17 @@ public class NormalPlayerCtrl : MonoBehaviour
     private Transform playerTr;
 
     // 1. Values for Smooth Damp
-    private Vector3 destination = new Vector3(0.0f, 0.0f, 43.32f);
+    private Vector3 destination = new Vector3(0.0f, 0.0f, 37.0f);
     private Vector3 velocity = Vector3.zero;
     public float smoothTime = 2.0f;
     float distance = 0.0f;
+    private AudioSource audiosource;
 
     // Start is called before the first frame update
     void Start()
     {
         playerTr = GetComponent<Transform>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

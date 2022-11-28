@@ -353,9 +353,15 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Scripts/App.cs"
-"Assets/Scripts/Protocols.cs"
-"Assets/Scripts/UIManager.cs"
+"Assets/Scripts/GameEndProtocols.cs"
+"Assets/Scripts/GameEndScript.cs"
+"Assets/Scripts/GameOverScript.cs"
+"Assets/Scripts/GameStartProtocols.cs"
+"Assets/Scripts/GameStartScript.cs"
+"Assets/Scripts/UItest/Protocols.cs"
+"Assets/Scripts/UItest/RankImport.cs"
+"Assets/Scripts/UItest/Rankings.cs"
+"Assets/Scripts/UItest/UIManager.cs"
 -langversion:9.0
 
 /deterministic

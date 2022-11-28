@@ -19,6 +19,13 @@ public class Detect_player : MonoBehaviour
             mat.color = Color.red;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            mat.color = Color.white;
+        }
+    }
 
     // Update is called once per frame
     void Update()

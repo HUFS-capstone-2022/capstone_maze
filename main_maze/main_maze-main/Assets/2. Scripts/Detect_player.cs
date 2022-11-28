@@ -14,7 +14,7 @@ public class Detect_player : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.name == "Player")
+        if(other.tag == "Player")
         {
             mat.color = Color.red;
         }

@@ -11,7 +11,6 @@ public class NormalUnit1 : MonoBehaviour
     private Transform unitTr;
     private NavMeshAgent navAgent;
     private Animator anim;
-    private AudioSource audiosource;
 
     private Vector3 destination = new Vector3(13.4f, 0.0f, 48.38f);
 
@@ -31,7 +30,6 @@ public class NormalUnit1 : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.SetDestination(destination);
         anim = GetComponent<Animator>();
-        audiosource = GetComponent<AudioSource>();
 
         playerTr = GameObject.FindWithTag("PLAYER").GetComponent<Transform>();
         unitTr = GetComponent<Transform>();
@@ -61,8 +59,6 @@ public class NormalUnit1 : MonoBehaviour
                 anim.SetBool("Shooting", true);
 
                 moving = false;
-
-                audiosource.Play();
             }
         }
 

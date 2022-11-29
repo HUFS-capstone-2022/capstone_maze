@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4440683372386292}
+  - component: {fileID: 750209351564479818}
   m_Layer: 0
   m_Name: MetalContainer_Yellow
   m_TagString: Untagged
@@ -121,6 +122,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &750209351564479818
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245754734481218}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 0.3
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.731
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8819518903414365074}
+  - screenRelativeHeight: 0.432
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8819518903414365068}
+  - screenRelativeHeight: 0.19
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8819518903414365070}
+  m_Enabled: 1
 --- !u!1 &1486308469192712
 GameObject:
   m_ObjectHideFlags: 0

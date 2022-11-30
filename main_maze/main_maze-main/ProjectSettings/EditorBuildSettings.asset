@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/1. Scene/main_maze.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/1. Scene/Test_Scene.unity
+    guid: f0f375bcfcf351d468a9c090dfd5de33
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 852f837e10c990443bc49f29d992bd9e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9099db6d8fcb9dc4a976b0b60a423187, type: 2}

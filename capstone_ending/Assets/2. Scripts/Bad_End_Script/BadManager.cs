@@ -1,3 +1,5 @@
+using System;
+using System.Globalization;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -75,7 +77,21 @@ public class BadManager : MonoBehaviour
     {
         // Assign Components of player
         playerTr = GameObject.FindWithTag("PLAYER").GetComponent<Transform>();
-        Debug.Log("start value of PlayerPrefs_ending = " + PlayerPrefs.GetInt("ending"));
+
+
+        PlayerPrefs.SetString("ClearType", "Bad");
+        Debug.Log("Ending Type : " + PlayerPrefs.GetString("ClearType"));
+        
+        // Time
+        string st = PlayerPrefs.GetString("StartTime");
+        Debug.Log(st);
+        DateTime ST = DateTime.ParseExact(st, @"MM\/dd\/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+        Debug.Log(ST);
+        TimeSpan ts = DateTime.Now - ST;
+        string playTime = ts.ToString();
+        Debug.Log(playTime);
+        PlayerPrefs.SetString("PlayTime", playTime);
+        Debug.Log("Playing Time = " + PlayerPrefs.GetString("PlayTime"));
     }
 
     // Update is called once per frame
@@ -111,10 +127,7 @@ public class BadManager : MonoBehaviour
         // 3. get DB data
         if (getDB)
         {
-            Debug.Log("getting DB by UI");
-            // makeFadeOut = true;
-            PlayerPrefs.SetInt("ending", 1);
-            Debug.Log("PlayerPrefs_ending = " + PlayerPrefs.GetInt("ending"));
+            playerTr.Find("UI").gameObject.SetActive(true);
             getDB = false;
         }
     }

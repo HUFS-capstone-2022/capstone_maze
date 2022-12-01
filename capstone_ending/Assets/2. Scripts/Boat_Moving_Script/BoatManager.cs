@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 [DefaultExecutionOrder(0)]
@@ -44,12 +46,6 @@ public class BoatManager : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -57,9 +53,7 @@ public class BoatManager : MonoBehaviour
         // 3. get DB data
         if (getDB)
         {
-            Debug.Log("getting DB by UI");
-            // makeFadeOut = true;
-            // Debug.Log("got data and Ordered to make screen FadeIn");
+            GameObject.FindWithTag("PLAYER").transform.Find("UI").gameObject.SetActive(true);
             getDB = false;
         }
     }

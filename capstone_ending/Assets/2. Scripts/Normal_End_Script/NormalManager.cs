@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 [DefaultExecutionOrder(0)]
@@ -70,6 +72,20 @@ public class NormalManager : MonoBehaviour
     {
         // Assign Components of player
         playerTr = GameObject.FindWithTag("PLAYER").GetComponent<Transform>();
+
+        PlayerPrefs.SetString("ClearType", "Normal");
+        Debug.Log("Ending Type : " + PlayerPrefs.GetString("ClearType"));
+
+        // Time
+        string st = PlayerPrefs.GetString("StartTime");
+        Debug.Log(st);
+        DateTime ST = DateTime.ParseExact(st, @"MM\/dd\/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+        Debug.Log(ST);
+        TimeSpan ts = DateTime.Now - ST;
+        string playTime = ts.ToString();
+        Debug.Log(playTime);
+        PlayerPrefs.SetString("PlayTime", playTime);
+        Debug.Log("Playing Time = " + PlayerPrefs.GetString("PlayTime"));
     }
 
     // Update is called once per frame
@@ -87,10 +103,7 @@ public class NormalManager : MonoBehaviour
         // 3. get DB data
         if (getDB)
         {
-            Debug.Log("getting DB by UI");
-            PlayerPrefs.SetInt("ending", 2);
-            // makeFadeOut = true;
-            Debug.Log("PlayerPrefs_ending = " + PlayerPrefs.GetInt("ending"));
+            playerTr.Find("UI").gameObject.SetActive(true);
             getDB = false;
         }
     }

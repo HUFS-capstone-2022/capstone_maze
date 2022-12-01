@@ -15,7 +15,7 @@ TagManager:
   - UI
   - BACKGROUND
   - UNITS
-  - 
+  - BOAT
   - 
   - 
   - 
@@ -42,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 304419589
+    locked: 0
+  - name: BOAT
+    uniqueID: 2851707347
+    locked: 0
+  - name: UINTS
+    uniqueID: 3016113095
+    locked: 0
+  - name: BACKGROUND
+    uniqueID: 2877576791
     locked: 0

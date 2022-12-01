@@ -16,9 +16,7 @@ public class BadUnit : MonoBehaviour
 // Distance between units and player
     public float AroundTarget = 2.5f;
 
-// Check, if this object wants to attack
-    public bool isAttack = false;
-    public bool moving = true;
+    public bool moving = false;
 
 // Awake()
     private void Awake()
@@ -54,12 +52,6 @@ public class BadUnit : MonoBehaviour
                 // If unit is arrived, count the unit number
                 BadManager.Instance.arrivedUnitNum++;
 
-                // // If this unit is selected to attack, set animator bool "ATTACK" true
-                // if (isAttack)
-                // {
-                //     anim.SetBool("attack", true);
-                // }
-
                 moving = false;
             }
         }
@@ -67,14 +59,6 @@ public class BadUnit : MonoBehaviour
         // change unit's rotation to player
         Quaternion lookRotation = Quaternion.LookRotation((playerTr.position - unitTr.position).normalized);
         unitTr.rotation = Quaternion.Slerp(unitTr.rotation, lookRotation, 4.0f * Time.deltaTime);
-
-        // // if arrived Unit number is 10, set animator integer "ARRIVED_UNIT_NUM" 10.
-        // if (BadManager.Instance.arrivedUnitNum == 10)
-        // {
-        //     Debug.Log("arrived unit is 10");
-
-        //     anim.SetInteger("unitNum", 10);
-        // }
     }
 
 

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 // Script execution order --> This script have to execute faster than other scripts
@@ -45,5 +47,22 @@ public class TrueManager : MonoBehaviour
         }
         // If have Instance, Instance have to be only one. So, destroy this game object.
         Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        PlayerPrefs.SetString("ClearType", "True");
+        Debug.Log("Ending Type : " + PlayerPrefs.GetString("ClearType"));
+
+        // Time
+        string st = PlayerPrefs.GetString("StartTime");
+        Debug.Log(st);
+        DateTime ST = DateTime.ParseExact(st, @"MM\/dd\/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+        Debug.Log(ST);
+        TimeSpan ts = DateTime.Now - ST;
+        string playTime = ts.ToString();
+        Debug.Log(playTime);
+        PlayerPrefs.SetString("PlayTime", playTime);
+        Debug.Log("Playing Time = " + PlayerPrefs.GetString("PlayTime"));
     }
 }

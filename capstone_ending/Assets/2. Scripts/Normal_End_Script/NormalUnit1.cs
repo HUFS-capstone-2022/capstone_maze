@@ -12,7 +12,7 @@ public class NormalUnit1 : MonoBehaviour
     private NavMeshAgent navAgent;
     private Animator anim;
 
-    private Vector3 destination = new Vector3(13.4f, 0.0f, 48.38f);
+    private Vector3 destination = new Vector3(12.15f, 0.0f, 49.28f);
 
     // Check, if this object wants to attack
     public bool isAttack = false;

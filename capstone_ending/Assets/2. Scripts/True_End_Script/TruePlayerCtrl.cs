@@ -6,6 +6,7 @@ public class TruePlayerCtrl : MonoBehaviour
 // Must have values
     private Transform playerTr;
     private NavMeshAgent navAgent;
+    private AudioSource audioSource;
     
 // Values for set destination or check player is arrived
     float distance = 0.0f;
@@ -19,6 +20,7 @@ public class TruePlayerCtrl : MonoBehaviour
     {
         playerTr = GetComponent<Transform>();
         navAgent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class TruePlayerCtrl : MonoBehaviour
             if (setAgentDest)
             {
                 navAgent.SetDestination(destination);
+                audioSource.Play();
                 setAgentDest = false;
             }
 
@@ -37,6 +40,7 @@ public class TruePlayerCtrl : MonoBehaviour
             if (distance < 0.2f)
             {
                 navAgent.isStopped = true;
+                audioSource.Stop();
                 TrueManager.Instance.makePlayerMoving = false;
                 arrived = true;
             }
